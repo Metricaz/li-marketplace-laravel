@@ -1,0 +1,285 @@
+.single-produto{
+    padding-bottom: 80px;
+}
+.single-produto h1{
+    color: #333;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px; /* 142.857% */
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+.produto-h2{
+    color: #371E56;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px; /* 131.25% */
+    letter-spacing: -0.32px; 
+}
+.single-produto small, .single-produto small > *{ 
+    font-size: 11px;
+}
+.single-produto .produto-img-wrap{
+    width: 100%;
+    max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+.single-produto .produto-img-gallery{
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.single-produto .produto-img-gallery li{
+    cursor: pointer;
+    display: flex;
+    padding: 1px;
+    width: 66px;
+    height: 66px;
+    border-radius: 6px;
+    border: 1px solid #DCDCDC;
+    background: #FFF; 
+}
+.single-produto .produto-img-gallery li.ativo{
+    border: 1px solid #222;
+}
+.single-produto .produto-tecnico{
+    margin-top: 15px;
+    margin-bottom: 21px;
+    border-bottom: 1px solid #E8E8E8;
+}
+.single-produto .produto-tecnico small{
+    color: #333;
+    font-size: 14px;
+    line-height: normal; 
+}
+.single-produto .produto-tecnico b{
+    font-weight: 600;
+}
+.produto-valores{
+    margin: 20px 0;
+    font-size: 17px;
+}
+.produto-valores b{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+}
+.produto-valores b.valor-parcelado{
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+.produto-valores b.valor-parcelado{
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+.produto-valores .valor{
+    color: #222;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -1px;
+}
+.produto-valores small{
+    color: #666;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.produto-valores > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.single-produto .produto-condicoes .condicoes-msg{
+    padding: 8px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19.2px; /* 160% */
+}
+.single-produto .produto-form{
+    justify-content: flex-start;
+    margin: 15px 0;
+}
+.single-produto .produto-form input[type="number"]{
+    position: relative; 
+    display: block;
+    height: 58px;
+    border-radius: 6px;
+    border: 1px solid #DADADA;
+    background: #FFF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
+    text-align:center;
+    font-size: 15px;
+    font-weight: 700;
+}
+.single-produto .produto-form input[type=number]::-webkit-outer-spin-button, 
+.single-produto .produto-form input[type=number]::-webkit-inner-spin-button {
+    background-color: #FFF;
+    border-left: 1px solid #DADADA;
+    -webkit-appearance: inner-spin-button !important;
+    width: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+.btn-comprar{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 17px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #2bc4c3;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.20);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+.single-produto .produto-parcela-box{
+    border: 1px solid rgba(0, 0, 0, 0.13);
+}
+.single-produto .produto-parcela-box details {
+    padding: 11px;
+}
+.single-produto .produto-parcela-box summary {
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    text-align: right;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; 
+    transition: font-size 1s, font-weight 1s ease;
+}
+.single-produto .produto-parcela-box ul {
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style: none;
+}
+.single-produto .produto-parcela-box .produto-parcela-box-footer{
+    padding: 11px;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px; 
+}
+.share-wrap p{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.share-wrap ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.share-wrap ul li{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    align-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.share-wrap ul li a{
+    background-color: #000;
+    display: block;
+    line-height: 0;
+    border-radius: 5px;
+}
+.share-wrap .share-facebook{
+    background-color: #0866ff;
+}
+.share-wrap .share-whatsapp{
+    background-color: #12af0a;
+}
+.share-wrap .share-x{
+    background-color: #000;
+}
+.produto-faixa{
+    border-top: 1px solid #F3F3F3;
+    background: #FFF;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.09);
+}
+.produto-faixa h3{
+    color: #333;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;    
+}
+.produto-valores > div{
+    gap: 1px;
+}
+.produto-faixa .produto-valores{
+    margin: 0;
+}
+.produto-faixa .produto-valores *:not(small) {
+    margin: 0;
+    font-size: 18px !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 660px) {
+    section .row.gap10{
+        gap: 10px;
+        justify-content: center;
+    }
+    .single-produto h1{
+        margin-top: 20px;
+    }
+    .produto-valores > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .produto-valores b.valor-parcelado{
+        font-size: 16px;
+    }
+    .produto-faixa .produto-valores *:not(small){
+        font-size: 15px !important;
+    }
+}
