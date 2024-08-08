@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\MarketPlaceController;
 use App\Http\Controllers\ProductPageController;
-use App\Http\Controllers\CategoryController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,11 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-
 Route::apiResource('/', MarketPlaceController::class);
 
 Route::apiResource('/product', ProductPageController::class);
 
 Route::apiResource('/category', CategoryController::class);
 Route::post('/category/{id}/search', [CategoryController::class, 'search']);
+
+Route::get('health-check', [HealthCheckController::class, 'check']);
