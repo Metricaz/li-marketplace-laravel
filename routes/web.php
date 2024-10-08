@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\MarketPlaceController;
 use App\Http\Controllers\ProductPageController;
+use App\Http\Controllers\MarketPlaceShopeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('/', MarketPlaceController::class);
-
 Route::apiResource('/product', ProductPageController::class);
+
+Route::apiResource('/shopee', MarketPlaceShopeeController::class);
 
 Route::apiResource('/category', CategoryController::class);
 Route::post('/category/{id}/search', [CategoryController::class, 'search']);
