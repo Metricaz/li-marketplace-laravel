@@ -18,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Rotas teste para desenvolvimento dos layouts
+ */
+Route::get('/pdp', function() {
+	return view('newlayout.pdp');
+});
+
+
+
 Route::apiResource('/', MarketPlaceController::class);
 Route::apiResource('/product', ProductPageController::class);
 
