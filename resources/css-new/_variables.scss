@@ -1,0 +1,42 @@
+$bkp-mobile : 320px;
+$bkp-phablet : 640px;
+$bkp-tablet : 768px;
+$bkp-desktop : 980px;
+$bkp-wide : 1280px;
+$bkp-hd : 1920px;
+
+$zindex-overlay    : 100;
+$zindex-bottom-bar : 500;
+$zindex-search     : 600;
+$zindex-filter     : 600;
+
+:root {
+  // Type
+  --bc-font-family       : "IBM Plex Sans", sans-serif;
+  --bc-font-family-title : "IBM Plex Sans", sans-serif;
+  --bc-font-weight-bold  : 700;
+  --bc-font-weight-title : 700;
+
+  // Colors
+  --bc-color-bg              : #fff;
+  --bc-color-bg-soft         : #efefef;
+  --bc-color-bg-dark         : #525252;
+  --bc-color-bg-dark-text    : #fff;
+  --bc-color-bg-darkest      : #292929;
+  --bc-color-bg-darkest-text : #fff;
+  --bc-color-bg-darkest-text-secondary : #BDBDBD;
+  // --bc-color-brand          : #D14905;
+  --bc-color-brand           : #E24314;
+  --bc-color-brand-text      : #fff;
+  --bc-color-brand-light     : #F5874F;
+  --bc-color-link            : var(--bc-color-brand);
+  --bc-color-border          : #D6D6D6;
+  --bc-color-border-dark     : #7C7C7C;
+  --bc-color-text            : #292929;
+  --bc-color-text-secondary  : #6A6A6A;
+
+  // Defaults
+  --bc-border-radius         : 10px;
+  --bc-border-radius-input   : 4px;
+  --bc-border-radius-button  : 4px;
+}

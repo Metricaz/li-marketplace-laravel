@@ -1,0 +1,30 @@
+.c-category-page-bar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--bc-color-text-secondary);
+
+  &__left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__select {
+    background-color: var(--bc-color-bg);
+    border-radius: 6px;
+    border: solid 1px var(--bc-color-brand);
+    font-family: inherit;
+    font-size: 14px;
+    height: 32px;
+    line-height: 1px;
+    padding: 0 8px;
+  }
+}

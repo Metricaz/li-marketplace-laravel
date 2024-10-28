@@ -1,0 +1,75 @@
+@use '../_variables' as *;
+
+.c-footer {
+  background-color: var(--bc-color-bg-darkest);
+  color: var(--bc-color-bg-darkest-text);
+  padding: 0 0 80px;
+
+  @media (min-width: $bkp-tablet) {
+    padding-bottom: 0;
+  }
+
+  &__follow-us {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: auto;
+      margin-bottom: 12px;
+    }
+
+    &-list {
+      align-items: center;
+      display: flex;
+      gap: 20px;
+    }
+
+    &-item {
+      display: block;
+      color: var(--bc-color-bg-darkest-text-secondary);
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  &__top {
+    padding: 20px 0;
+    border-bottom: solid 1px var(--bc-color-border-dark);
+
+    @media (min-width: $bkp-tablet) {
+      padding: 40px 0;
+    }
+  }
+
+  &__bottom {
+    padding: 35px 0;
+
+    @media (min-width: $bkp-tablet) {
+      padding: 35px 0 60px;
+    }
+  }
+
+  &__bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+
+    p {
+      font-size: 10px;
+      display: flex;
+      gap: 20px;
+
+      a {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+}

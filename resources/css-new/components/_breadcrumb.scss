@@ -1,0 +1,33 @@
+.c-breadcrumb {
+  border-bottom: solid 1px var(--bc-color-border);
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      font-weight: var(--bc-font-weight-bold);
+    }
+
+    &:not(:last-child):after {
+      border-radius: 2px;
+      border-right: solid 2px;
+      border-top: solid 2px;
+      color: var(--bc-color-text-secondary);
+      content: '';
+      display: flex;
+      height: 7.5px;
+      margin: 0 10px;
+      transform: rotate(45deg);
+      width: 7.5px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+}
