@@ -1,3 +1,5 @@
+@use '../_variables' as *;
+
 .c-category-page-bar {
   margin-bottom: 20px;
   display: flex;
@@ -8,13 +10,23 @@
   &__left {
     display: flex;
     gap: 10px;
-    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $bkp-phablet) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__right {
     display: flex;
     gap: 10px;
-    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $bkp-phablet) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__select {
