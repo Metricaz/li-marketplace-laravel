@@ -1,0 +1,151 @@
+@use '../_variables' as *;
+
+.c-brands-section {
+  background-color: var(--bc-color-bg-darkest);
+  color: var(--bc-color-bg-darkest-text);
+  padding: 28px 0;
+  position: relative;
+
+  @media (min-width: $bkp-desktop) {
+    padding: 45px 0;
+  }
+
+  &__brands-wrapper {
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 65%;
+  }
+
+  &__btn {
+    align-items: center;
+    background-color: transparent;
+    border-radius: 100%;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: none;
+    height: 34px;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    z-index: 10;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+
+    @media (min-width: $bkp-desktop) {
+      display: flex;
+    }
+
+    &--left {
+      left: -20px;
+
+      @media (min-width: $bkp-desktop) {
+        left: -35px;
+      }
+    }
+
+    &--right {
+      right: -20px;
+
+      @media (min-width: $bkp-desktop) {
+        right: -35px;
+      }
+    }
+  }
+
+  &__list {
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    width: 100%;
+
+    @media (min-width: $bkp-tablet) {
+      gap: 50px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::after,
+    &::before {
+      bottom: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 50px;
+      z-index: 1;
+    }
+
+    &::before {
+      background: linear-gradient(to right, var(--bc-color-bg-darkest), rgba(0, 0, 0, 0));
+      left: -1px;
+    }
+
+    &::after {
+      background: linear-gradient(to left, var(--bc-color-bg-darkest), rgba(0, 0, 0, 0));
+      right: -1px;
+    }
+
+    &.has-fade-left::before {
+      content: '';
+    }
+
+    &.has-fade-right::after {
+      content: '';
+    }
+
+    a {
+      display: block;
+      flex-shrink: 0;
+      height: 38px;
+      max-width: 80%;
+      width: 100px;
+
+      &:hover {
+        opacity: 0.85;
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    align-items: center;
+    display: flex;
+    font-size: 13px;
+    line-height: normal;
+    max-width: 113px;
+    width: 35%;
+
+    @media (min-width: $bkp-tablet) {
+      font-size: 20px;
+      max-width: 30%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+}

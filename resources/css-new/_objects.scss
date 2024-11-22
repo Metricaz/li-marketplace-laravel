@@ -1,0 +1,13 @@
+@use '_variables' as *;
+
+.o-container {
+  margin: 0 auto;
+  max-width: 1220px;
+  padding: 0 20px;
+  width: 100%;
+  zoom: 1;
+
+  @media (min-width: $bkp-tablet) {
+    padding: 0 40px;
+  }
+}

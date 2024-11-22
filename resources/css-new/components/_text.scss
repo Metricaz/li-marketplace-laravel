@@ -1,0 +1,103 @@
+@use "sass:math";
+@use '../_variables' as *;
+
+.c-text {
+  max-width: 750px;
+  padding: 30px 0;
+        font-size: 18px;
+      line-height: 32px;
+
+  @media (min-width: $bkp-tablet) {
+    padding: 60px 0 100px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  h1 {
+    font-size: 33px;
+    line-height: 39px;
+    margin: 0 0 30px;
+
+    @media (min-width: $bkp-tablet) {
+      font-size: 40px;
+      line-height: 38px;
+      margin: 0 0 40px;
+    }
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 28px;
+    margin: 30px 0 20px;
+
+    @media (min-width: $bkp-tablet) {
+      font-size: 26px;
+      line-height: 32px;
+      margin: 40px 0 35px;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 30px 0 20px;
+
+    @media (min-width: $bkp-tablet) {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 45px 0 30px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 15px;
+
+    a {
+      color: var(--bc-color-brand);
+      text-decoration: underline;
+    }
+
+    @media (min-width: $bkp-tablet) {
+      font-size: 18px;
+      line-height: 32px;
+      margin-bottom: 22px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 22px;
+
+    @media (min-width: $bkp-tablet) {
+      font-size: 18px;
+      line-height: 32px;
+      margin: 22px 0;
+    }
+
+    li {
+      display: block;
+      padding-left: 1.4em;
+      position: relative;
+      margin-bottom: 10px;
+
+      &::before {
+        content: '';
+        background-color: currentColor;
+        border-radius: 100%;
+        display: block;
+        flex-shrink: 0;
+        height: math.div(1em, 3);
+        left: 0.5em;
+        position: absolute;
+        top: math.div(1em, 2);
+        transform: translateY(50%);
+        width: math.div(1em, 3);
+      }
+    }
+  }
+}

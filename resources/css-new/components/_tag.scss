@@ -1,0 +1,13 @@
+.c-tag {
+  border-radius: 70px;
+  border: solid 1px var(--bc-color-brand);
+  color: var(--bc-color-brand);
+  font-size: 14px;
+  line-height: 18px;
+  padding: 4px 10px 3px 10px;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

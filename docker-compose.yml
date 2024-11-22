@@ -1,0 +1,69 @@
+x-shared-environment: &shared-environment
+  env_file: .env
+  restart: unless-stopped
+  networks:
+    - boracomprar-network
+
+x-shared-build-app: &shared-build-app
+  image: boracomprar-app
+  build:
+    args:
+      user: boracomprar
+      uid: 1000
+    context: ./
+    dockerfile: ./docker/Dockerfile
+
+services:
+  app:
+    <<: [
+      *shared-environment,
+      *shared-build-app
+    ]
+    depends_on:
+      - redis
+    volumes:
+      - ./:/var/www
+
+  nginx:
+    <<: *shared-environment
+    image: boracomprar-nginx
+    build:
+      context: ./
+      dockerfile: ./docker/nginx/Dockerfile
+    volumes:
+      - ./:/var/www
+    ports:
+      - 8000:80
+
+  redis:
+    <<: *shared-environment
+    image: redis:6.2-alpine
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - redis-data:/data
+    ports:
+      - 6379:6379
+
+  workspace:
+    <<: *shared-environment
+    image: boracomprar-workspace
+    build:
+      args:
+        user: ${DOCKER_HOST_USER}
+        uid: ${DOCKER_HOST_UID}
+      context: ./
+      dockerfile: ./docker/workspace/Dockerfile
+    tty: true
+    stdin_open: true
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - 5173:5173
+
+volumes:
+  redis-data:
+
+networks:
+  boracomprar-network:
+    external: true

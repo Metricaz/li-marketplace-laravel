@@ -1,0 +1,162 @@
+@use '../_variables' as *;
+
+.c-product {
+  &__button {
+    align-items: center;
+    border-radius: 10px;
+    border: solid 2px var(--bc-color-brand);
+    color: var(--bc-color-brand);
+    display: flex;
+    font-size: 24px;
+    font-weight: 700;
+    gap: 20px;
+    height: 68px;
+    justify-content: center;
+    transition: all .07s linear;
+
+    &:hover {
+      color: var(--bc-color-brand-text);
+      background-color: var(--bc-color-brand);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bkp-tablet) {
+      flex-grow: 1;
+    }
+  }
+
+  &__label {
+    background-color: var(--bc-color-brand);
+    color: var(--bc-color-brand-text);
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 5px 8px 5px;
+  }
+
+  &__labels {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__main {
+    flex-grow: 1;
+    margin-bottom: 60px;
+
+    @media (min-width: 1140px) {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__old-price {
+    color: var(--bc-color-text-secondary);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-decoration: line-through;
+  }
+
+  &__sizes {
+    margin-bottom: 30px;
+
+    @media (min-width: $bkp-tablet) {
+      margin-bottom: 40px;
+    }
+
+    &-list {
+      display: flex;
+      gap: 10px;
+    }
+
+    &-item {
+      align-items: center;
+      background-color: var(--bc-color-brand);
+      border-radius: 4px;
+      color: var(--bc-color-brand-text);
+      cursor: pointer;
+      display: flex;
+      font-size: 18px;
+      height: 40px;
+      justify-content: center;
+      line-height: 1;
+      width: 40px;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    &-title {
+      font-size: 15px;
+      line-height: 19px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price {
+    font-size: 32px;
+    color: var(--bc-color-brand);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 15px;
+
+    @media (min-width: $bkp-tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__send {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 15px;
+    line-height: 1;
+
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 0;
+      width: 100%;
+
+      @media (min-width: $bkp-tablet) {
+        align-items: center;
+        order: -1;
+        justify-content: space-between;
+        margin: 5px 0 20px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 10px;
+
+    @media (min-width: $bkp-tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__views {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 15px;
+
+    @media (min-width: $bkp-tablet) {
+      margin-bottom: 0;
+    }
+  }
+}

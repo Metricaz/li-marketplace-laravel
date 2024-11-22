@@ -1,0 +1,43 @@
+@use '../_variables' as *;
+
+.c-category-page {
+  &__wrapper {
+    padding: 10px 0 40px;
+
+    @media (min-width: $bkp-tablet) {
+      display: flex;
+      gap: 60px;
+      padding: 40px 0;
+    }
+  }
+
+  &__content {
+
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px 30px;
+
+    @media (min-width: $bkp-phablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $bkp-tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $bkp-desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__sidebar {
+    flex-shrink: 0;
+
+    @media (min-width: $bkp-tablet) {
+      width: 230px;
+    }
+  }
+}

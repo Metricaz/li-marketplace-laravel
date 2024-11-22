@@ -1,0 +1,29 @@
+@use '../_variables' as *;
+
+.c-category-description {
+  border-bottom: solid 1px var(--bc-color-border);
+  padding: 20px 0;
+
+  @media (min-width: $bkp-desktop) {
+    padding: 40px 0;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: var(--bc-font-weight-title);
+    line-height: 110%;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 0;
+
+    > a {
+      color: var(--bc-color-link);
+      text-decoration: underline;
+    }
+  }
+}
