@@ -1,0 +1,14 @@
+@use '../_variables' as *;
+
+.c-section-title {
+  font-size: 32px;
+  line-height: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @media (min-width: $bkp-desktop) {
+    font-size: 48px;
+    line-height: 58px;
+    margin-bottom: 75px;
+  }
+}

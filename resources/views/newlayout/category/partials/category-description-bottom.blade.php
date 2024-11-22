@@ -15,19 +15,31 @@
     </h3>
 
     <div class="c-category-description-bottom__tags">
-      <a href="#" class="c-tag">
+      <a
+        class="c-tag"
+        href="/newlayout/categoria"
+      >
         Casaco Feminino
       </a>
 
-      <a href="#" class="c-tag">
+      <a
+        class="c-tag"
+        href="/newlayout/categoria"
+      >
         Camisas Femininas
       </a>
 
-      <a href="#" class="c-tag">
+      <a
+        class="c-tag"
+        href="/newlayout/categoria"
+      >
         Calça Feminina
       </a>
 
-      <a href="#" class="c-tag">
+      <a
+        class="c-tag"
+        href="/newlayout/categoria"
+      >
         Blazer Feminino
       </a>
     </div>

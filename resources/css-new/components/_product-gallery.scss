@@ -1,0 +1,53 @@
+@use '../_variables' as *;
+
+.c-product-gallery {
+  margin-bottom: 20px;
+  width: 100%;
+
+  @media (min-width: 1140px) {
+    max-width: 375px;
+  }
+
+  &__image {
+    background-color: var(--bc-color-bg-soft);
+    border-radius: 4px;
+    border: solid 1px var(--bc-color-border);
+    height: 330px;
+    margin-bottom: 10px;
+    object-fit: contain;
+    overflow: hidden;
+    width: 100%;
+
+    @media (min-width: 1140px) {
+      height: 430px;
+    }
+  }
+
+  &__thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__thumb {
+    background-color: var(--bc-color-bg-soft);
+    border-radius: 4px;
+    border: solid 1px var(--bc-color-border);
+    cursor: pointer;
+    height: 70px;
+    opacity: 0.3;
+    overflow: hidden;
+    width: 70px;
+    object-fit: contain;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+}

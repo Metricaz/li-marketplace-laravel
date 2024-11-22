@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, follow">
+  <title>@yield('meta-title', 'Bora Comprar')</title>
+  <meta name="description" content="@yield('meta-description', 'Bora Comprar')">
   @vite('resources/css-new/app.scss')
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +14,6 @@
 <body>
   @include('newlayout.partials.top-bar')
   @include('newlayout.partials.header')
-  @include('newlayout.partials.breadcrumb')
   @yield('content')
   @include('newlayout.partials.footer')
   @vite('resources/js-new/app.js')

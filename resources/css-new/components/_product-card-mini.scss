@@ -3,11 +3,9 @@
   border-radius: var(--bc-border-radius);
   overflow: hidden;
   transition: 0.1s all ease-in-out;
-  width: 300px;
   display: flex;
   height: 125px;
-  flex-shrink: 0;
-  max-width: 80%;
+  width: 100%;
 
   &:hover {
     border-color: var(--bc-color-brand);

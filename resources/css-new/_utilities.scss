@@ -24,3 +24,18 @@
   border: 0 !important;
 }
 
+.u-text-center {
+  text-align: center;
+}
+
+@media (min-width: $bkp-tablet) {
+  .u-hidden-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: ($bkp-tablet - 1)) {
+  .u-visible-tablet {
+    display: none;
+  }
+}

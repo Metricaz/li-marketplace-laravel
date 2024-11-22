@@ -1,7 +1,10 @@
 @extends('newlayout.master')
+@section('meta-title', 'Lorem ipsum dolor sit - Bora Comprar')
+@section('meta-description', 'Lorem ipsum dolor sit - Bora Comprar')
 
 @section('content')
 <div class="c-category-page">
+  @include('newlayout.partials.breadcrumb')
   @include('newlayout.category.partials.category-description')
   @include('newlayout.category.partials.top-offers')
 
@@ -53,12 +56,12 @@
 
         <div class="c-category-page__list">
           @for($i=0;$i<12;$i++)
-            @include('newlayout.category.partials.product-card', [
+            @include('newlayout.partials.product-card', [
               'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit dapibus elit at tristique. Mauris eget est ac tellus elementum',
               'price' => '129,99',
               'old_price' => '199,99',
               'image_url' => 'https://placehold.co/300x300?text=P',
-              'url' => '#',
+              'url' => '/newlayout/produto',
             ])
           @endfor
         </div>

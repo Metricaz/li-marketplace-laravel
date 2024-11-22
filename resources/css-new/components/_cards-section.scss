@@ -1,0 +1,108 @@
+@use '../_variables' as *;
+
+.c-cards-section {
+  position: relative;
+  padding: 50px 0;
+
+  + .c-cards-section {
+    border-top: solid 1px #ccc;
+  }
+
+  @media (min-width: $bkp-desktop) {
+    padding: 70px 0;
+  }
+
+  &__button {
+    display: none;
+
+    @media (min-width: $bkp-desktop) {
+      text-align: center;
+      margin-top: 42px;
+      display: block;
+    }
+  }
+
+  &__list {
+    align-items: stretch;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    overflow: visible;
+    padding: 2px 0 0;
+
+    @media (min-width: $bkp-desktop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin: 0;
+    }
+
+    > .c-product-card {
+      flex-shrink: 0;
+      max-width: 80%;
+      width: 268px;
+
+      @media (min-width: $bkp-desktop) {
+        max-width: 100%;
+        width: auto;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__last-card {
+    display: flex;
+    align-items: stretch;
+
+    > a {
+      align-items: center;
+      border-radius: 10px;
+      border: solid 4px var(--bc-color-brand);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      font-size: 21px;
+      font-weight: 700;
+      gap: 28px;
+      justify-content: center;
+      line-height: 26px;
+      margin-right: 20px;
+      padding: 20px 20px;
+      text-align: center;
+      width: 268px;
+
+      @media (min-width: $bkp-desktop) {
+        display: none;
+      }
+    }
+
+    svg {
+      color: var(--bc-color-brand);
+    }
+
+    &-button {
+      background-color: var(--bc-color-brand);
+      color: var(--bc-color-brand-text);
+      border-radius: var(--bc-border-radius-button);
+      text-align: center;
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      width: 100%;
+    }
+  }
+
+  &__list-wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    position: relative;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+}

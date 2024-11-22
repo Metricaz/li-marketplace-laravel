@@ -63,6 +63,8 @@ class TopOffers {
   }
 
   init() {
+    if (!this.offersList || !this.scrollLeftBtn || !this.scrollRightBtn) return;
+
     this.updateScrollButtons();
     this.addEventListeners();
   }

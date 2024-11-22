@@ -1,15 +1,15 @@
 <header class="c-header">
   <div class="o-container c-header__wrapper">
     <a
-      href="/"
+      href="/newlayout"
       title="Bora Comprar"
       class="c-header__logo"
     >
       <img
-      src="{{ asset('img-new/logo.webp') }}"
-      alt="Logo Bora Comprar"
-      width="250"
-      height="31"
+        src="{{ asset('img-new/logo.webp') }}"
+        alt="Logo Bora Comprar"
+        width="250"
+        height="31"
       >
     </a>
 
@@ -38,6 +38,10 @@
           @include('newlayout.partials.svg.icons.search')
         </button>
       </div>
+    </div>
+
+    <div class="c-header__follow-us">
+      @include('newlayout.partials.follow-us', ['size' => 'sm'])
     </div>
   </div>
 </header>

@@ -1,0 +1,96 @@
+@use '../_variables' as *;
+
+.c-hero {
+  background-color: var(--bc-color-bg-soft);
+
+  @media (min-width: $bkp-desktop) {
+    background-color: transparent;
+    position: relative;
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 770px;
+    padding: 30px 0 45px;
+    text-align: center;
+
+    @media (min-width: $bkp-desktop) {
+      align-items: flex-start;
+      flex-grow: 1;
+      padding: 0;
+      text-align: left;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: 448px;
+    width: 100%;
+
+    @media (min-width: $bkp-desktop) {
+      display: inline;
+    }
+
+    img,
+    source {
+      height: 448px;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+
+      @media (min-width: $bkp-desktop) {
+        bottom: 0;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__text {
+    color: var(--bc-color-text-secondary);
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 30px;
+    max-width: 360px;
+
+    @media (min-width: $bkp-desktop) {
+      font-size: 22px;
+      line-height: 31px;
+      margin-bottom: 50px;
+      max-width: 470px;
+    }
+  }
+
+  &__title {
+    color: var(--bc-color-brand);
+    font-family: var(--bc-font-family-title);
+    font-size: 34px;
+    font-weight: var(--bc-font-weight-title);
+    line-height: 36px;
+    margin-bottom: 25px;
+    max-width: 315px;
+
+    @media (min-width: $bkp-desktop) {
+      font-size: 60px;
+      line-height: 65px;
+      margin-bottom: 30px;
+      max-width: 577px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bkp-desktop) {
+      height: calc(100vh - 75px - 42px);
+      max-height: 510px;
+    }
+  }
+}

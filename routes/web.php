@@ -21,8 +21,16 @@ use Illuminate\Support\Facades\Route;
 /**
  * Rotas teste para desenvolvimento dos layouts
  */
-Route::get('/newlayout/category', function() {
+Route::get('/newlayout', function() {
+	return view('newlayout.home.index');
+});
+
+Route::get('/newlayout/categoria', function() {
 	return view('newlayout.category.index');
+});
+
+Route::get('/newlayout/produto', function() {
+	return view('newlayout.product.index');
 });
 
 Route::apiResource('/', MarketPlaceController::class);
