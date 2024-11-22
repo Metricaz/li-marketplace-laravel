@@ -33,6 +33,18 @@ Route::get('/newlayout/produto', function() {
 	return view('newlayout.product.index');
 });
 
+Route::get('/newlayout/termos-de-uso', function() {
+	return view('newlayout.pages.terms-of-use');
+});
+
+Route::get('/newlayout/politica-e-privacidade', function() {
+	return view('newlayout.pages.policy-and-privacy');
+});
+
+Route::get('/newlayout/quem-somos', function() {
+	return view('newlayout.pages.about-us');
+});
+
 Route::apiResource('/', MarketPlaceController::class);
 Route::apiResource('/product', ProductPageController::class);
 
