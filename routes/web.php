@@ -45,7 +45,7 @@ Route::get('/newlayout/quem-somos', function() {
 	return view('newlayout.pages.about-us');
 });
 
-Route::apiResource('/', MarketPlaceController::class);
+Route::apiResource('/', ProductPageController::class);
 Route::apiResource('/product', ProductPageController::class);
 
 Route::apiResource('/shopee', MarketPlaceShopeeController::class);

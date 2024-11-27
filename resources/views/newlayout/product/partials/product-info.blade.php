@@ -6,11 +6,11 @@
   </div>
 
   <div class="c-product__old-price">
-    R$ 179,90
+    {{$product->price}}
   </div>
 
   <div class="c-product__price">
-    R$ 141,90
+    {{$product->price}}
   </div>
 
   <div class="c-product__sizes">

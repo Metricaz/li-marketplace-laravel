@@ -1,8 +1,9 @@
 <div class="c-product-gallery" data-product-gallery>
+
   <img
     class="c-product-gallery__image"
     data-product-gallery-image
-    src="https://placehold.co/375x400?text=P"
+    src="{{$product->feature_image}}"
     alt="Lorem ipsum dolor sit amet consectetur adipiscing elit"
     width="375"
     height="430"

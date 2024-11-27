@@ -9,7 +9,7 @@
 
   <div class="c-product-page__details-text">
     <p>
-      Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Maecenas id neque mauris. Morbi gravida dui ut suscipit vehicula.
+      {{$product->full_description}}
     </p>
 
     <p>
