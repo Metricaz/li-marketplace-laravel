@@ -19,12 +19,12 @@ return new class extends Migration
             $table->Integer('price')->nullable();
             $table->string('sold_by');
             $table->string('highlight');
-            $table->string('category');
+            $table->string('category')->nullable();
             $table->Integer('category_id')->nullable();
             $table->string('product_nickname')->nullable();
             $table->string('full_description');
             $table->string('feature_image');
-            $table->string('images');
+            $table->string('images')->nullable();
             $table->string('locale')->nullable();
             $table->timestamp('_created_at')->nullable();
             $table->timestamp('_updated_at')->nullable();
