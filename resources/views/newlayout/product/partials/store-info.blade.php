@@ -4,7 +4,7 @@
   </h2>
 
   <h3 class="c-product-page__details-subtitle">
-    Lorem ipsum dolor
+    {{$product->seller_site}}
   </h3>
 
   <div class="c-product-page__details-text">

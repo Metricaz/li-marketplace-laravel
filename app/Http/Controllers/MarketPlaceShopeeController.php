@@ -20,9 +20,17 @@ class MarketPlaceShopeeController extends BaseController
     {
         $products = (new Product())->all();
 
-        return view('home', [
-            'data' => $products,
+        return view('newlayout.category.index', [
+            'products' => $products,
+            'productCount' => (new Product())->count(),
             'category_id' => null,
+        ]);
+    }
+
+    public function show($id): View
+    {
+        return view('product', [
+            'product' => (new Product())->find($id),
         ]);
     }
 }

@@ -18,7 +18,7 @@
         <div class="c-category-page-bar">
           <div class="c-category-page-bar__left">
             <span class="c-category-page-bar__results">
-              545 produtos
+              {{$productCount}} produtos
             </span>
 
             <label for="select-order-by" class="u-visually-hidden">
@@ -55,15 +55,16 @@
         </div>
 
         <div class="c-category-page__list">
-          @for($i=0;$i<12;$i++)
+          @foreach($products as $product)
             @include('newlayout.partials.product-card', [
-              'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit dapibus elit at tristique. Mauris eget est ac tellus elementum',
-              'price' => '129,99',
-              'old_price' => '199,99',
-              'image_url' => 'https://placehold.co/300x300?text=P',
-              'url' => '/newlayout/produto',
+                'title' => $product->name,
+                'price' => $product->price,
+                'old_price' => $product->price,
+                'image_url' => $product->feature_image,
+                'url' => '/product/'.$product->id,
             ])
-          @endfor
+
+          @endforeach
         </div>
       </div>
     </div>
