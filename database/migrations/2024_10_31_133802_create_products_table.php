@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->Integer('category_id')->nullable();
             $table->string('product_nickname')->nullable();
+            $table->string('offer_link')->nullable();
             $table->string('full_description');
             $table->string('feature_image');
             $table->string('images')->nullable();

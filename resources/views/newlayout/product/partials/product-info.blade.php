@@ -27,7 +27,8 @@
 
   <a
     class="c-product__button"
-    href="#"
+    href="{{$product->offer_link}}"
+    target="_blank"
   >
     Ver Oferta @include('newlayout.partials.svg.icons.amazon')
   </a>
@@ -35,7 +36,7 @@
   <div class="c-product__send-wrapper">
     <a
       class="c-product__send"
-      href="#"
+      href="{{$product->offer_link}}"
     >
       @include('newlayout.partials.svg.icons.send') Enviar para um amigo
     </a>

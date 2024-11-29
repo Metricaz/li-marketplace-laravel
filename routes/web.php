@@ -49,7 +49,7 @@ Route::get('/', [ProductPageController::class, 'index']);
 
 Route::get('/{category}', [CategoryController::class, 'index']);
 
-Route::apiResource('/product', ProductPageController::class);
+Route::get('/product/{id}', [ProductPageController::class, 'show']);
 
 Route::apiResource('/shopee', MarketPlaceShopeeController::class);
 

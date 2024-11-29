@@ -77,6 +77,7 @@ class GetShopeeProducts extends Command
                     "name" => Arr::get($product, 'productName'),
                     "price" => Arr::get($product, 'price'),
                     "sold_by" => Arr::get($product, 'shopName'),
+                    "offer_link" => Arr::get($product, 'offerLink'),
                     "highlight" =>  sprintf('%s+ Vendidos', Arr::get($product, 'sales')),
                     "category" => $keyword,
                     "category_id" => null,

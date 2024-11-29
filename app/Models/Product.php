@@ -26,6 +26,7 @@ class Product extends Model
         'product_nickname',
         'full_description',
         'feature_image',
+        'offer_link',
         'images',
         'locale',
     ];
