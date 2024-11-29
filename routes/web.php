@@ -45,12 +45,14 @@ Route::get('/newlayout/quem-somos', function() {
 	return view('newlayout.pages.about-us');
 });
 
-Route::apiResource('/', ProductPageController::class);
+Route::get('/', [ProductPageController::class, 'index']);
+
+Route::get('/{category}', [CategoryController::class, 'index']);
+
 Route::apiResource('/product', ProductPageController::class);
 
 Route::apiResource('/shopee', MarketPlaceShopeeController::class);
 
-Route::apiResource('/category', CategoryController::class);
 Route::post('/category/{id}/search', [CategoryController::class, 'search']);
 
 Route::get('health-check', [HealthCheckController::class, 'check']);

@@ -8,9 +8,9 @@ use Illuminate\View\View;
 
 class CategoryController extends BaseController
 {
-    public function index(): View
+    public function index($category): View
     {
-        $products = (new Product())->all();
+        $products = (new Product())->where('category', $category)->get();
 
         return view('newlayout.category.index', [
             'products' => $products,
