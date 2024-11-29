@@ -17,7 +17,7 @@ class GetShopeeProducts extends Command
      *
      * @var string
      */
-    protected $signature = 'app:get-shopee-products';
+    protected $signature = 'app:get-shopee-products {--keyword=jeans}';
 
     /**
      * The console command description.
@@ -31,7 +31,10 @@ class GetShopeeProducts extends Command
      */
     public function handle()
     {
-        $payload = '{"query":"{\n    productOfferV2(){\n        nodes {\n            productName\n            itemId\n            commissionRate\n            commission\n            price\n            sales\n            imageUrl\n            shopName\n            productLink\n            offerLink\n            periodStartTime\n            periodEndTime\n            priceMin\n            priceMax\n            productCatIds\n            ratingStar\n            priceDiscountRate\n            shopId\n            shopType\n            sellerCommissionRate\n            shopeeCommissionRate\n        }\n        pageInfo{\n            page\n            limit\n            hasNextPage\n            scrollId\n        }\n    }\n    }","variables":null}';
+        $keyword = $this->option('keyword');
+
+        $payload = sprintf('{"query":"{\n    productOfferV2(keyword: \\"%s\\"){\n        nodes {\n            productName\n            itemId\n            commissionRate\n            commission\n            price\n            sales\n            imageUrl\n            shopName\n            productLink\n            offerLink\n            periodStartTime\n            periodEndTime\n            priceMin\n            priceMax\n            productCatIds\n            ratingStar\n            priceDiscountRate\n            shopId\n            shopType\n            sellerCommissionRate\n            shopeeCommissionRate\n        }\n        pageInfo{\n            page\n            limit\n            hasNextPage\n            scrollId\n        }\n    }\n    }","variables":null}', $keyword);
+
         $partnerId = env("SHOPEE_PARTNER_ID");
         $timestamp = Carbon::now()->timestamp;
         $secret = env("SHOPEE_SECRET");
@@ -48,7 +51,10 @@ class GetShopeeProducts extends Command
             $payload, 'application/json'
         )->post('https://open-api.affiliate.shopee.com.br/graphql');
 
-        $products = $this->getProducts(json_decode($response->body(), true));
+        $products = $this->getProducts(
+            json_decode($response->body(), true),
+            $keyword
+        );
 
         foreach ($products as $key => $product) {
             $productModel = (new Product())->fill($product);
@@ -58,7 +64,7 @@ class GetShopeeProducts extends Command
         return 1;
     }
 
-    public function getProducts($response)
+    public function getProducts($response, $keyword)
     {
         $products = new Collection();
         $productNode = Arr::get($response, 'data.productOfferV2.nodes');
@@ -72,7 +78,7 @@ class GetShopeeProducts extends Command
                     "price" => Arr::get($product, 'price'),
                     "sold_by" => Arr::get($product, 'shopName'),
                     "highlight" =>  sprintf('%s+ Vendidos', Arr::get($product, 'sales')),
-                    "category" => null,
+                    "category" => $keyword,
                     "category_id" => null,
                     "product_nickname" => null,
                     "full_description" => Arr::get($product, 'productName'),
