@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryTexts;
+use App\Models\Product;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\View\View;
-use App\Models\Product;
 
 class ProductPageController extends BaseController
 {
     public function show($id): View
     {
+        $product =  (new Product())->find($id);
+        $categoryText = (new CategoryTexts())->where('category', $product->category)->first();
+
         return view('newlayout.product.index', [
-            'product' => (new Product())->find($id),
+            'product' => $product,
+            'categoryText' => $categoryText,
         ]);
     }
 }

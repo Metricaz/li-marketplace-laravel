@@ -72,7 +72,6 @@ class GetAWSProducts extends Command
         ];
 
         $searchItemsRequest = new SearchItemsRequest();
-        
 
         // $searchItemsRequest->setProperties($properties);
         // $searchItemsRequest->setItemPage($offset);
@@ -96,11 +95,6 @@ class GetAWSProducts extends Command
 
         $responseWithHttpInfo = $apiInstance->searchItemsWithHttpInfo($searchItemsRequest);
         $products = $this->getProducts($responseWithHttpInfo[0]->getSearchResult()->getItems(), $keyword);
-
-
-
-
-
 
         foreach ($products as $key => $product) {
             $productModel = (new Product())->fill($product);
