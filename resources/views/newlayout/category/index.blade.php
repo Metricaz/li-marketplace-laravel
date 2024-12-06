@@ -5,8 +5,8 @@
 @section('content')
 <div class="c-category-page">
   @include('newlayout.partials.breadcrumb')
-  @include('newlayout.category.partials.category-description')
-  @include('newlayout.category.partials.top-offers')
+  @include('newlayout.category.partials.category-description', ['categoryText' => $categoryText])
+  @include('newlayout.category.partials.top-offers', ['top-products' => $products])
 
   <div class="o-container">
     <div class="c-category-page__wrapper">
@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  @include('newlayout.category.partials.category-description-bottom')
+  @include('newlayout.category.partials.category-description-bottom', ['categoryText' => $categoryText])
 </div>
 @include('newlayout.category.partials.bottom-bar')
 @stop
