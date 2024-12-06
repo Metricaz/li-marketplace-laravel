@@ -18,29 +18,11 @@
   </a>
 
   <a
-    href="#"
-    class="c-follow-us__item"
-    title="Youtube"
-    target="_blank"
-  >
-    @include('newlayout.partials.svg.icons.social-youtube')
-  </a>
-
-  <a
     href="https://www.facebook.com/people/BoraComprarNet/"
     class="c-follow-us__item"
     title="Facebook"
     target="_blank"
   >
     @include('newlayout.partials.svg.icons.social-facebook')
-  </a>
-
-  <a
-    href="#"
-    class="c-follow-us__item"
-    title="Twitter"
-    target="_blank"
-  >
-    @include('newlayout.partials.svg.icons.social-twitter')
   </a>
 </div>
