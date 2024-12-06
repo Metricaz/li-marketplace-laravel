@@ -110,12 +110,17 @@ class GetAWSProducts extends Command
         $products = new Collection();
 
         foreach ($responseProducts as $product) {
+            $price = null;
+            if ($product->getOffers() && $product->getOffers()->getListings()[0]->getPrice() !== null) {
+                $price = $product->getOffers()->getListings()[0]->getPrice()->getAmount();
+            }
+
             $products->push(
                 [
                     "seller_site" => "aws",
                     "sku" => Str::of($product->getItemInfo()->getTitle()->getDisplayValue())->slug('-'),
                     "name" => $product->getItemInfo()->getTitle()->getDisplayValue(),
-                    "price" => $product->getOffers() && $product->getOffers()->getListings()[0]->getPrice(),
+                    "price" => $price,
                     "sold_by" => "Amazon",
                     "offer_link" => "",
                     "highlight" =>  "",
