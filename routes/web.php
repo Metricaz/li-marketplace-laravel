@@ -47,7 +47,7 @@ Route::get('/newlayout/quem-somos', function() {
 
 Route::get('/', [ProductPageController::class, 'index']);
 
-Route::get('/{category}', [CategoryController::class, 'index']);
+Route::get('/{category}', [CategoryController::class, 'index'])->name('category');
 
 Route::get('/product/{id}', [ProductPageController::class, 'show']);
 

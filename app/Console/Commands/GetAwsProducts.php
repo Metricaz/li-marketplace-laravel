@@ -10,6 +10,7 @@ use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsRequest;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsResource;
 use Amazon\ProductAdvertisingAPI\v1\Configuration;
 use App\Models\Product;
+use App\Models\ProductInfo;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
@@ -99,11 +100,14 @@ class GetAWSProducts extends Command
         foreach ($products as $key => $product) {
             $productModel = (new Product())->fill($product);
             $productModel->save();
+
+            $productInfo = (new ProductInfo())->fill($product["info"]);
+            $productInfo->product_id = $productModel->id;
+            $productInfo->save();
         }
 
         return 1;
     }
-
 
     public function getProducts($responseProducts, $keyword)
     {
@@ -111,8 +115,19 @@ class GetAWSProducts extends Command
 
         foreach ($responseProducts as $product) {
             $price = null;
+            $color = null;
+            $size = null;
+
             if ($product->getOffers() && $product->getOffers()->getListings()[0]->getPrice() !== null) {
                 $price = $product->getOffers()->getListings()[0]->getPrice()->getAmount();
+            }
+
+            if ($product->getItemInfo()->getProductInfo() && $product->getItemInfo()->getProductInfo()->getColor() !== null) {
+                $color = $product->getItemInfo()->getProductInfo()->getColor()->getDisplayValue();
+            }
+
+            if ($product->getItemInfo()->getProductInfo() && $product->getItemInfo()->getProductInfo()->getSize() !== null) {
+                $size = $product->getItemInfo()->getProductInfo()->getSize()->getDisplayValue();
             }
 
             $products->push(
@@ -130,7 +145,15 @@ class GetAWSProducts extends Command
                     "full_description" => $product->getItemInfo()->getTitle()->getDisplayValue(),
                     "feature_image" => $product->getImages()->getPrimary()->getMedium()->getUrl(),
                     "images" => null,
-                    "locale" => "sao_paulo"
+                    "locale" => "sao_paulo",
+                    "info" => [
+                        "color" => $color,
+                        "is_adult_product" => "",
+                        "item_dimensions" => "",
+                        "release_date" => "",
+                        "size" => $size,
+                        "unit_count" => "",
+                    ],
                 ]
             );
         }
