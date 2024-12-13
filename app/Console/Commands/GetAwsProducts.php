@@ -11,6 +11,7 @@ use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsResource;
 use Amazon\ProductAdvertisingAPI\v1\Configuration;
 use App\Models\Product;
 use App\Models\ProductInfo;
+use App\Models\CategoryTexts;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
@@ -41,6 +42,35 @@ class GetAWSProducts extends Command
     public function handle()
     {
         $keyword = $this->option('keyword');
+
+        $data = [
+            "title" => "Automatic li-generated",
+            "prompt"=> $keyword,
+            "type" =>  "plp_post"
+        ];
+
+        $guzzle = new Client(['base_uri' => env("TEXT_API_URL")]);
+
+        $rawResponse = $guzzle->post("/api/text", [
+            'headers' => [
+                'Authorization' => env("TEXT_API_TOKEN"),
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json'
+            ],
+          'body' => json_encode($data),
+        ]);
+
+        $response = $rawResponse->getBody()->getContents();
+
+        $allText = json_decode(Arr::get(json_decode($response, true), 'text'), true);
+
+        $categoryText = new CategoryTexts();
+        $categoryText->category = $keyword;
+        $categoryText->top_text = Arr::get($allText, 'pageSummary');
+        $categoryText->top_text_title = 'Not implemented yet';
+        $categoryText->bottom_text = Arr::get($allText, 'linkTree');
+        $categoryText->bottom_text_title = 'Not implemented yet';
+        $categoryText->save();
 
         $config = new Configuration();
         $config->setAccessKey(env("AWS_ACCESS_KEY_ID"));
