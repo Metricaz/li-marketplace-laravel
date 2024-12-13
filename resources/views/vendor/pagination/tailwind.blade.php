@@ -1,16 +1,17 @@
 @if ($paginator->hasPages())
     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
-        <div class="flex justify-between flex-1 sm:hidden pagination_bc">
-            @if ($paginator->onFirstPage())
-                <span class="no_pagination_bc">
-                    <
-                </span>
-            @else
-                <a href="{{ $paginator->previousPageUrl() }}" class="">
-                    <
-                </a>
-            @endif
-        </div>
+        <div class="pagination_bc_center">
+            <div class="flex justify-between flex-1 sm:hidden pagination_bc">
+                @if ($paginator->onFirstPage())
+                    <span class="no_pagination_bc">
+                        <
+                    </span>
+                @else
+                    <a href="{{ $paginator->previousPageUrl() }}" class="">
+                        <
+                    </a>
+                @endif
+            </div>
             <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between pagination_bc numbers_bc">
                 <div class="arrows-pagination">
                     <span class="relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
@@ -41,16 +42,17 @@
                     </span>
                 </div>
             </div>
-        <div class="flex justify-between flex-1 sm:hidden pagination_bc">
-            @if ($paginator->hasMorePages())
-                <a href="{{ $paginator->nextPageUrl() }}" class="">
-                    >
-                </a>
-            @else
-                <span class="no_pagination_bc">
-                    >
-                </span>
-            @endif
+            <div class="flex justify-between flex-1 sm:hidden pagination_bc">
+                @if ($paginator->hasMorePages())
+                    <a href="{{ $paginator->nextPageUrl() }}" class="">
+                        >
+                    </a>
+                @else
+                    <span class="no_pagination_bc">
+                        >
+                    </span>
+                @endif
+            </div>
         </div>
     </nav>
 @endif
