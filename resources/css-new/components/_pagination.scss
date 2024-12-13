@@ -1,14 +1,15 @@
 .pagination_bc {
-  display: inline-block;
-  width: 100%;
+  display: inherit;
   margin-top: 20px;
+  float: left;
+  margin: 0 auto;
 }
 
 .pagination_bc a {
   color: #e24314;
   float: left;
   margin-left: 10px;
-  padding: 6px 46px;
+  padding: 6px 14px;
   text-decoration: none;
   transition: background-color .3s;
   border: 1px solid #E24314;
@@ -34,7 +35,7 @@
   color: #4b4b4b;
   float: left;
   margin-left: 10px;
-  padding: 6px 46px;
+  padding: 6px 14px;
   text-decoration: none;
   transition: background-color .3s;
   border: 1px solid #bfbfbf;
@@ -54,6 +55,7 @@
 }
 
 nav.flex.items-center.justify-between {
-    float: left;
-    margin-left: 30%;
+  float: left;
+  width: 100%;
+  margin-top: 40px;
 }

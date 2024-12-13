@@ -10,6 +10,7 @@
                     <
                 </a>
             @endif
+        </div>
             <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between pagination_bc numbers_bc">
                 <div class="arrows-pagination">
                     <span class="relative z-0 inline-flex rtl:flex-row-reverse shadow-sm rounded-md">
@@ -40,6 +41,7 @@
                     </span>
                 </div>
             </div>
+        <div class="flex justify-between flex-1 sm:hidden pagination_bc">
             @if ($paginator->hasMorePages())
                 <a href="{{ $paginator->nextPageUrl() }}" class="">
                     >
