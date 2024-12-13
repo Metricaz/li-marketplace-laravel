@@ -56,156 +56,102 @@
 
       <div class="c-filter__block">
         <h4 class="c-filter__subtitle">
-          Enviado de
+          Marca
         </h4>
 
         <div class="c-filter__list">
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            São Paulo
+            Levi's
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Rio Grande do Sul
+            Sawary
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Rio de Janeiro
+            Biotipo
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Mato Grosso
+            Hering
           </label>
         </div>
       </div>
 
       <div class="c-filter__block">
         <h4 class="c-filter__subtitle">
-          Tipos de Loja
+          Tipos
         </h4>
 
         <div class="c-filter__list">
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Indicada
+            Calça Skinny
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Verificada
+            Calça Boyfriend
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Campeã de Vendas
+            Calça Pantalona
+          </label>
+
+          <label class="c-checkbox">
+            <input type="checkbox" class="c-checkbox__input">
+            <span class="c-checkbox__box"></span>
+            Calça Mom
           </label>
         </div>
       </div>
 
       <div class="c-filter__block">
         <h4 class="c-filter__subtitle">
-          Condições
+          Cores
         </h4>
 
         <div class="c-filter__list">
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Novo
+            Azul
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Usado
-          </label>
-        </div>
-      </div>
-
-      <div class="c-filter__block">
-        <h4 class="c-filter__subtitle">
-          Enviado de
-        </h4>
-
-        <div class="c-filter__list">
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input">
-            <span class="c-checkbox__box"></span>
-            São Paulo
+            Preto
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Rio Grande do Sul
+            Cinza
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Rio de Janeiro
+            Bege
           </label>
 
           <label class="c-checkbox">
             <input type="checkbox" class="c-checkbox__input">
             <span class="c-checkbox__box"></span>
-            Mato Grosso
-          </label>
-        </div>
-      </div>
-
-      <div class="c-filter__block">
-        <h4 class="c-filter__subtitle">
-          Tipos de Loja
-        </h4>
-
-        <div class="c-filter__list">
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input">
-            <span class="c-checkbox__box"></span>
-            Indicada
-          </label>
-
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input">
-            <span class="c-checkbox__box"></span>
-            Verificada
-          </label>
-
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input">
-            <span class="c-checkbox__box"></span>
-            Campeã de Vendas
-          </label>
-        </div>
-      </div>
-
-      <div class="c-filter__block">
-        <h4 class="c-filter__subtitle">
-          Condições
-        </h4>
-
-        <div class="c-filter__list">
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input">
-            <span class="c-checkbox__box"></span>
-            Novo
-          </label>
-
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input">
-            <span class="c-checkbox__box"></span>
-            Usado
+            Branco
           </label>
         </div>
       </div>
