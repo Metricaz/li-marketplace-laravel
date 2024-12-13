@@ -3,21 +3,21 @@
         <div class="flex justify-between flex-1 sm:hidden pagination_bc">
             @if ($paginator->onFirstPage())
                 <span class="no_pagination_bc">
-                    {!! __('pagination.previous') !!}
+                    Anterior
                 </span>
             @else
                 <a href="{{ $paginator->previousPageUrl() }}" class="">
-                    {!! __('pagination.previous') !!}
+                    Anterior
                 </a>
             @endif
 
             @if ($paginator->hasMorePages())
                 <a href="{{ $paginator->nextPageUrl() }}" class="">
-                    {!! __('pagination.next') !!}
+                    Próximo
                 </a>
             @else
                 <span class="no_pagination_bc">
-                    {!! __('pagination.next') !!}
+                    Próximo
                 </span>
             @endif
         </div>
@@ -39,10 +39,10 @@
                             @foreach ($element as $page => $url)
                                 @if ($page == $paginator->currentPage())
                                     <span aria-current="page">
-                                        <span class="no_pagination_bc">{{ $page }}</span>
+                                        <span class="active_pagination_bc">{{ $page }}</span>
                                     </span>
                                 @else
-                                    <a href="{{ $url }}" class="no_pagination_bc" aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
+                                    <a href="{{ $url }}" class="" aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
                                         {{ $page }}
                                     </a>
                                 @endif
