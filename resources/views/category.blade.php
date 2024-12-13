@@ -31,8 +31,8 @@
               name=""
             >
               <option value="">Mais Relevante</option>
-              <option value="">Praço mais alto</option>
-              <option value="">Praço mais baixo</option>
+              <option value="">Preço mais alto</option>
+              <option value="">Preço mais baixo</option>
             </select>
           </div>
 
