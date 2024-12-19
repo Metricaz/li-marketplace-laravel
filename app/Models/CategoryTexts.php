@@ -13,9 +13,7 @@ class CategoryTexts extends Model
      */
     protected $fillable = [
         'category',
-        'top_text_title',
         'top_text',
-        'bottom_text_title',
         'bottom_text',
     ];
 }

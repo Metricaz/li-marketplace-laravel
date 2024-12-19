@@ -67,9 +67,7 @@ class GetAWSProducts extends Command
         $categoryText = new CategoryTexts();
         $categoryText->category = $keyword;
         $categoryText->top_text = Arr::get($allText, 'pageSummary');
-        $categoryText->top_text_title = 'Not implemented yet';
         $categoryText->bottom_text = Arr::get($allText, 'linkTree');
-        $categoryText->bottom_text_title = 'Not implemented yet';
         $categoryText->save();
 
         $config = new Configuration();

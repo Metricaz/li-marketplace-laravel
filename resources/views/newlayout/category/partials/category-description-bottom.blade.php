@@ -1,13 +1,5 @@
 <div class="c-category-description-bottom">
   <div class="o-container">
-    <h2 class="c-category-description-bottom__title">
-      @if ($categoryText)
-        {{ $categoryText->bottom_text_title }}
-      @else
-        Lorem ipsum dolor sit amet
-      @endif
-    </h2>
-
     <div class="c-category-description-bottom__text">
       <p>
       @if ($categoryText)

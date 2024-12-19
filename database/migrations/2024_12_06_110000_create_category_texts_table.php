@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('category_texts', function (Blueprint $table) {
             $table->id();
             $table->string('category');
-            $table->string('top_text_title');
             $table->text('top_text');
-            $table->string('bottom_text_title');
             $table->text('bottom_text');
             $table->timestamp('_created_at')->nullable();
             $table->timestamp('_updated_at')->nullable();
