@@ -19,6 +19,17 @@ echo "USER:" $(id -un)
 echo "UID:" $(id -u)
 ```
 
+Atualize as variáveis:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=dev_boracomprar
+DB_USERNAME=boracomprar
+DB_PASSWORD=boracomprar
+```
+
 Após as configurações do .env, execute:
 
 ```
@@ -28,6 +39,8 @@ docker compose up -d
 
 docker compose exec workspace composer install
 docker compose exec workspace php artisan key:generate
+docker compose exec workspace php artisan migrate --seed
+docker compose exec workspace php artisan app:get-shopee-products --keyword=calca-jeans
 docker compose exec workspace npm install
 docker compose exec workspace npm run dev
 ```

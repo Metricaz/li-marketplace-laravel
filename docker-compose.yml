@@ -35,6 +35,20 @@ services:
     ports:
       - 8000:80
 
+  db:
+    <<: *shared-environment
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE=dev_boracomprar
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=boracomprar
+      - MYSQL_PASSWORD=boracomprar
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./docker/mysql/initdb:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+
   redis:
     <<: *shared-environment
     image: redis:6.2-alpine
@@ -62,6 +76,7 @@ services:
       - 5173:5173
 
 volumes:
+  db-data:
   redis-data:
 
 networks:
