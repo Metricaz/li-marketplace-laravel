@@ -65,7 +65,7 @@ class GetAWSProducts extends Command
         $allText = json_decode(Arr::get(json_decode($response, true), 'text'), true);
 
         $categoryText = new CategoryTexts();
-        $categoryText->category = $keyword;
+        $categoryText->category = Str::slug($keyword);
         $categoryText->top_text = Arr::get($allText, 'pageSummary');
         $categoryText->bottom_text = Arr::get($allText, 'linkTree');
         $categoryText->save();
@@ -123,7 +123,7 @@ class GetAWSProducts extends Command
         }
 
         $responseWithHttpInfo = $apiInstance->searchItemsWithHttpInfo($searchItemsRequest);
-        $products = $this->getProducts($responseWithHttpInfo[0]->getSearchResult()->getItems(), $keyword);
+        $products = $this->getProducts($responseWithHttpInfo[0]->getSearchResult()->getItems(), Str::slug($keyword));
 
         foreach ($products as $key => $product) {
             $productModel = (new Product())->fill($product);
