@@ -17,30 +17,30 @@
     <div class="c-category-description-bottom__tags">
       <a
         class="c-tag"
-        href="/newlayout/categoria"
+        href="/calca-jeans-masculina"
       >
-        Casaco Feminino
+        Calça Jeans Masculina
       </a>
 
       <a
         class="c-tag"
-        href="/newlayout/categoria"
+        href="/calca-jeans-feminina"
       >
-        Camisas Femininas
+        Calça Jeans Femininas
       </a>
 
       <a
         class="c-tag"
-        href="/newlayout/categoria"
+        href="/calca-mom-jeans"
       >
-        Calça Feminina
+        Calça Mom Jeans
       </a>
 
       <a
         class="c-tag"
-        href="/newlayout/categoria"
+        href="/calca-pantalona-jeans"
       >
-        Blazer Feminino
+        Calça Pantalona Jeans
       </a>
     </div>
   </div>

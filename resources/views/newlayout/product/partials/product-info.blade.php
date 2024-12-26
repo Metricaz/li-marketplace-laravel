@@ -40,11 +40,11 @@
       class="c-product__send"
       href="{{$product->offer_link}}"
     >
-      @include('newlayout.partials.svg.icons.send') Enviar para um amigo
+      <!-- @include('newlayout.partials.svg.icons.send') Enviar para um amigo -->
     </a>
 
-    <div class="c-product__views u-visible-tablet">
+<!--     <div class="c-product__views u-visible-tablet">
       @include('newlayout.partials.svg.icons.eye') 15
-    </div>
+    </div> -->
   </div>
 </div>

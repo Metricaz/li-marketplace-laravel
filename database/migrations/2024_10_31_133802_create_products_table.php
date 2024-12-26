@@ -16,15 +16,15 @@ return new class extends Migration
             $table->string('seller_site');
             $table->string('sku');
             $table->string('name');
-            $table->Integer('price')->nullable();
-            $table->Integer('discount_price')->nullable();
+            $table->float('price')->nullable();
+            $table->float('discount_price')->nullable();
             $table->string('sold_by');
             $table->string('highlight');
             $table->string('category')->nullable();
             $table->Integer('category_id')->nullable();
             $table->string('product_nickname')->nullable();
             $table->string('offer_link')->nullable();
-            $table->string('full_description');
+            $table->json('full_description')->nullable();
             $table->string('feature_image');
             $table->longText('images')->nullable();
             $table->string('locale')->nullable();

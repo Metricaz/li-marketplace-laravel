@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('item_dimensions')->nullable();
             $table->string('release_date')->nullable();
             $table->string('size')->nullable();
+            $table->string('brand')->nullable();
             $table->string('unit_count')->nullable();
             $table->timestamp('_created_at')->nullable();
             $table->timestamp('_updated_at')->nullable();

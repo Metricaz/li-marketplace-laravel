@@ -29,11 +29,28 @@ class CategoryController extends BaseController
         $paginationLimit = $request->get('per_page', 12);
         $products = (new Product())->where('category', $category);
 
-        if ($request->has('size')) {
-            $products
-                ->join('product_infos', 'products.id', '=', 'product_infos.product_id')
-                ->where('product_infos.size', $request->get('size'));
+        if ($request->has('size') || $request->has('brand') || $request->has('color')) {
+            $products->join(
+                'product_infos',
+                'products.id',
+                '=',
+                'product_infos.product_id'
+            );
         }
+
+        if ($request->has('size')) {
+            $products->whereIn('product_infos.size', $request->get('size'));
+        }
+
+        if ($request->has('brand')) {
+            $products->whereIn('product_infos.brand', $request->get('brand'));
+        }
+
+        if ($request->has('color')) {
+            $products->whereIn('product_infos.color', $request->get('color'));
+        }
+
+        $products->where('price', '>', '0');
 
         return $products->paginate($paginationLimit);
     }

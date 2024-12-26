@@ -21,6 +21,7 @@ class ProductInfo extends Model
         'item_dimensions',
         'release_date',
         'size',
+        'brand',
         'unit_count',
     ];
 }

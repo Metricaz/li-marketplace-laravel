@@ -8,8 +8,11 @@
   </h3>
 
   <div class="c-product-page__details-text">
-    <p>
-      {{$product->full_description}}
-    </p>
+
+    @foreach(json_decode($product->full_description, true) as $description)
+      <p>
+        {{$description}}
+      </p>
+    @endForeach
   </div>
 </div>

@@ -42,15 +42,17 @@
               Itens por página
             </label>
 
+            <form name="get-user-by-id" id="get-user-by-id" method="post" action="{{url('do-get-address')}}">
             <select
               class="c-category-page-bar__select"
               id="select-items-per-page"
-              name=""
+              name="select-items-per-page"
             >
               <option value="12">12</option>
               <option value="24">24</option>
               <option value="48">48</option>
             </select>
+            </form>
           </div>
         </div>
 

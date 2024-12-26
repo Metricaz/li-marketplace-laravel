@@ -23,7 +23,8 @@
       <span class="c-product-card__new-price">R$ {{ $price ?? '' }}</span>
     </div>
 
-    <div class="c-product-card__button">
+    
+    <div class="c-product-card__button" href="google.com">
       Ver <strong>Oferta</strong> @include('newlayout.partials.svg.icons.external-link')
     </div>
   </div>

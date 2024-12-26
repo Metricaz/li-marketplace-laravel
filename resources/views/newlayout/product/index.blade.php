@@ -29,6 +29,6 @@
     @include('newlayout.product.partials.store-info', ['product' => $product])
   </div>
 
-  @include('newlayout.category.partials.category-description-bottom')
+  <!-- @include('newlayout.category.partials.category-description-bottom') -->
 </div>
 @stop

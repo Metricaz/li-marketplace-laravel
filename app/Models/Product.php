@@ -20,6 +20,7 @@ class Product extends Model
         'sku',
         'name',
         'price',
+        'discount_price',
         'sold_by',
         'highlight',
         'category',
@@ -35,5 +36,10 @@ class Product extends Model
     public function info(): HasOne
     {
         return $this->hasOne(ProductInfo::class);
+    }
+
+    public function getPriceAttribute($price)
+    {
+        return number_format($price, 2, ',', '.');
     }
 }
