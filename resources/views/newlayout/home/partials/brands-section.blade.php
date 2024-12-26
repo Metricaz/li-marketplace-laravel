@@ -16,7 +16,7 @@
 
         <div class="c-brands-section__list" data-brands-section-list>
           <a
-            href="#"
+            href="/calca-jeans-levis"
             title="Levi's"
           >
             <img
@@ -28,7 +28,7 @@
           </a>
 
           <a
-            href="#"
+            href="/calca-jeans-zara"
             title="Zara"
           >
             <img
@@ -40,7 +40,7 @@
           </a>
 
           <a
-            href="#"
+            href="/calca-jeans-da-sawary"
             title="Sawary"
           >
             <img
@@ -52,7 +52,7 @@
           </a>
 
           <a
-            href="#"
+            href="/calca-jeans-colcci"
             title="Colcci"
           >
             <img

@@ -9,18 +9,18 @@
     <div class="c-cards-section__list-wrapper">
       <div class="o-container">
         <div class="c-cards-section__list" data-cards-section-list>
-          @for($i=0;$i<4;$i++)
-            @include('newlayout.partials.product-card',[
-              'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit dapibus elit at tristique. Mauris eget est ac tellus elementum',
-              'price' => '129,99',
-              'old_price' => '199,99',
-              'image_url' => 'https://placehold.co/300x300?text=P',
-              'url' => '/newlayout/produto',
+          @foreach($products as $product)
+            @include('newlayout.partials.product-card', [
+                'title' => $product->name,
+                'price' => $product->price,
+                'old_price' => $product->price,
+                'image_url' => $product->feature_image,
+                'url' => '/product/'.$product->id,
             ])
-          @endfor
 
+          @endforeach
           <div class="c-cards-section__last-card">
-            <a href="#" >
+            <a href="{!! $link !!}" >
               @include('newlayout.partials.svg.icons.seta-1')
 
               <div>
@@ -28,7 +28,7 @@
               </div>
 
               <div
-                href="{{ $link ?? '' }}"
+                href="{!! $link !!}"
                 class="c-cards-section__last-card-button"
               >
                 Ver mais
@@ -40,7 +40,7 @@
     </div>
 
     <div class="c-cards-section__button">
-      <a href="#" class="c-button c-button--secondary">
+      <a href="{!! $link !!}" class="c-button c-button--secondary">
         Ver Mais
       </a>
     </div>

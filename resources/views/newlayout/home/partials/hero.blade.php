@@ -12,7 +12,7 @@
 
         <a
           class="c-button"
-          href="/newlayout/categoria"
+          href="/calca-jeans-promocao"
         >
           Ver Agora
         </a>

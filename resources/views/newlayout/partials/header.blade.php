@@ -1,7 +1,7 @@
 <header class="c-header">
   <div class="o-container c-header__wrapper">
     <a
-      href="/newlayout"
+      href="/"
       title="Bora Comprar"
       class="c-header__logo"
     >

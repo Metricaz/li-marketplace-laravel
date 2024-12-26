@@ -7,7 +7,7 @@
     <div class="c-featured-categories__list">
       <a
         class="c-featured-categories__item"
-        href="/newlayout/categoria"
+        href="/calca-mom-jeans"
       >
         <img
           src="{{ asset('img-new/home/featured-categories/mom.webp') }}"
@@ -20,7 +20,7 @@
       </a>
 
       <a class="c-featured-categories__item"
-        href="/newlayout/categoria"
+        href="/calca-pantalona-jeans"
       >
         <img
           src="{{ asset('img-new/home/featured-categories/pantalona.webp') }}"
@@ -33,7 +33,7 @@
       </a>
 
       <a class="c-featured-categories__item"
-        href="/newlayout/categoria"
+        href="/calca-jeans-reta"
       >
         <img
           src="{{ asset('img-new/home/featured-categories/reta.webp') }}"
@@ -46,7 +46,7 @@
       </a>
 
       <a class="c-featured-categories__item"
-        href="/newlayout/categoria"
+        href="/calca-wide-leg-jeans"
       >
         <img
           src="{{ asset('img-new/home/featured-categories/wide-leg.webp') }}"

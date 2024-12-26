@@ -28,7 +28,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout"
+                    href="/"
                   >
                     Home
                   </a>
@@ -37,7 +37,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/quem-somos"
+                    href="/quem-somos"
                   >
                     Quem Somos
                   </a>
@@ -46,7 +46,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/politica-e-privacidade"
+                    href="/politica-e-privacidade"
                   >
                     Política de Privacidade
                   </a>
@@ -55,18 +55,9 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/termos-de-uso"
+                    href="/termos-de-uso"
                   >
                     Termos de Uso
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    class="c-footer__link"
-                    href="#"
-                  >
-                    Contato
                   </a>
                 </li>
               </ul>
@@ -83,7 +74,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-feminina"
                   >
                     Calça Jeans Feminina
                   </a>
@@ -92,7 +83,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-preta"
                   >
                     Calça Jeans Preta
                   </a>
@@ -101,7 +92,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-infantil"
                   >
                     Calça Jeans Infantil
                   </a>
@@ -110,7 +101,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-larga"
                   >
                     Calça Jeans Larga
                   </a>
@@ -119,7 +110,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-branca"
                   >
                     Calça Jeans Branca
                   </a>
@@ -128,7 +119,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-plus-size"
                   >
                     Calça Jeans Plus Size
                   </a>
@@ -137,7 +128,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-rasgada"
                   >
                     Calça Jeans Rasgada
                   </a>
@@ -146,7 +137,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-cinza"
                   >
                     Calça Jeans Cinza
                   </a>
@@ -155,7 +146,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-cintura-baixa"
                   >
                     Calça Jeans Cintura Baixa
                   </a>
@@ -166,7 +157,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-com-brilho"
                   >
                     Calça Jeans com Brilho
                   </a>
@@ -175,7 +166,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-escura"
                   >
                     Calça Jeans Escura
                   </a>
@@ -184,7 +175,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-de-marca"
                   >
                     Calça Jeans de Marca
                   </a>
@@ -193,7 +184,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-promocao"
                   >
                     Calça Jeans Promoção
                   </a>
@@ -202,7 +193,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-bege"
                   >
                     Calça Jeans Bege
                   </a>
@@ -211,7 +202,7 @@
                 <li>
                   <a
                     class="c-footer__link"
-                    href="/newlayout/categoria"
+                    href="/calca-jeans-rosa"
                   >
                     Calça Jeans Rosa
                   </a>

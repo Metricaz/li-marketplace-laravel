@@ -7,11 +7,13 @@
   @include('newlayout.home.partials.brands-section')
   @include('newlayout.home.partials.cards-section', [
     'title' => 'SUPER DESCONTOS',
-    'link' => '#'
+    'link' => '/calca-jeans',
+    'products' => $products
   ])
   @include('newlayout.home.partials.cards-section', [
     'title' => 'MAIS VENDIDOS',
-    'link' => '#'
+    'link' => '/calca-jeans',
+    'products' => $products
   ])
   @include('newlayout.home.partials.featured-categories')
   @include('newlayout.home.partials.newsletter-section')
