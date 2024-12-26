@@ -19,9 +19,7 @@
     </div>
 
     <div class="c-product__sizes-list">
-      <div class="c-product__sizes-item">40</div>
-      <div class="c-product__sizes-item">44</div>
-      <div class="c-product__sizes-item">46</div>
+      <div class="c-product__sizes-item">{!! $product->info->size !!}</div>
     </div>
   </div>
 

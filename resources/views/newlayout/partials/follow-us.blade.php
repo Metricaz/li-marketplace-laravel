@@ -18,7 +18,7 @@
   </a>
 
   <a
-    href="https://www.facebook.com/people/BoraComprarNet/"
+    href="https://www.facebook.com/profile.php?id=61568585421446&mibextid=ZbWKwL"
     class="c-follow-us__item"
     title="Facebook"
     target="_blank"

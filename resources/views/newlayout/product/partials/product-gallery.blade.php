@@ -13,37 +13,20 @@
     <img
       class="c-product-gallery__thumb is-active"
       data-product-gallery-thumb
-      src="https://placehold.co/375x400?text=P"
+      src="{{$product->feature_image}}"
       alt="Lorem ipsum dolor sit amet consectetur adipiscing elit"
       width="80"
       height="80"
     >
 
-    <img
-      class="c-product-gallery__thumb"
-      data-product-gallery-thumb
-      src="https://placehold.co/375x400?text=Q"
-      alt="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-      width="80"
-      height="80"
-    >
-
-    <img
-      class="c-product-gallery__thumb"
-      data-product-gallery-thumb
-      src="https://placehold.co/375x400?text=R"
-      alt="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-      width="80"
-      height="80"
-    >
-
-    <img
-      class="c-product-gallery__thumb"
-      data-product-gallery-thumb
-      src="https://placehold.co/375x400?text=S"
-      alt="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-      width="80"
-      height="80"
-    >
+    @foreach($images as $image)
+      <img
+        class="c-product-gallery__thumb"
+        data-product-gallery-thumb
+        src="{!! $image !!}"
+        width="80"
+        height="80"
+      >
+    @endforeach
   </div>
 </div>

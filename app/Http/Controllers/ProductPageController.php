@@ -13,10 +13,14 @@ class ProductPageController extends BaseController
     {
         $product =  (new Product())->find($id);
         $categoryText = (new CategoryTexts())->where('category', $product->category)->first();
+        $similarProducts = (new Product())->where('category', $product->category)->limit(3)->get();
+        $images = json_decode($product->images, true);
 
         return view('newlayout.product.index', [
             'product' => $product,
             'categoryText' => $categoryText,
+            'similarProducts' => $similarProducts,
+            'images' => $images,
         ]);
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('sku');
             $table->string('name');
             $table->Integer('price')->nullable();
+            $table->Integer('discount_price')->nullable();
             $table->string('sold_by');
             $table->string('highlight');
             $table->string('category')->nullable();
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->string('offer_link')->nullable();
             $table->string('full_description');
             $table->string('feature_image');
-            $table->string('images')->nullable();
+            $table->longText('images')->nullable();
             $table->string('locale')->nullable();
             $table->timestamp('_created_at')->nullable();
             $table->timestamp('_updated_at')->nullable();

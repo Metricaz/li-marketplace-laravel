@@ -16,14 +16,14 @@
         </div>
 
         <div class="c-product__main">
-          @include('newlayout.product.partials.product-gallery', ['product' => $product])
+          @include('newlayout.product.partials.product-gallery', ['product' => $product, 'images' => $images])
           @include('newlayout.product.partials.product-info', ['product' => $product])
         </div>
 
         @include('newlayout.product.partials.product-details', ['product' => $product])
       </div>
 
-      @include('newlayout.product.partials.sidebar')
+      @include('newlayout.product.partials.sidebar', ['similarProducts' => $similarProducts])
     </div>
 
     @include('newlayout.product.partials.store-info', ['product' => $product])

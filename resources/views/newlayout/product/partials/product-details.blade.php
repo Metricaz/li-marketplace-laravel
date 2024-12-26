@@ -11,9 +11,5 @@
     <p>
       {{$product->full_description}}
     </p>
-
-    <p>
-      Donec posuere, nisi sit amet rutrum posuere, tortor metus feugiat nisi, a convallis ante lectus quis ante. Pellentesque ligula nibh, accumsan vitae neque sit amet, laoreet consectetur ante.
-    </p>
   </div>
 </div>

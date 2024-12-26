@@ -3,13 +3,13 @@
     Ofertas similares
   </h3>
 
-  @for($i=0;$i<3;$i++)
-    @include('newlayout.partials.product-card-mini',[
-      'title' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit dapibus elit at tristique. Mauris eget est ac tellus elementum',
-      'price' => '129,99',
-      'old_price' => '199,99',
-      'image_url' => 'https://placehold.co/300x300?text=P',
-      'url' => '/newlayout/produto',
+  @foreach($similarProducts as $product)
+    @include('newlayout.partials.product-card-mini', [
+        'title' => $product->name,
+        'price' => $product->price,
+        'old_price' => $product->price,
+        'image_url' => $product->feature_image,
+        'url' => '/product/'.$product->id,
     ])
-  @endfor
+  @endforeach
 </div>

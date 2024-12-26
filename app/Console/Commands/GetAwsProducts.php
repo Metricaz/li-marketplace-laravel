@@ -27,7 +27,7 @@ class GetAWSProducts extends Command
      *
      * @var string
      */
-    protected $signature = 'app:get-aws-products {--keyword=calca-jeans}';
+    protected $signature = 'app:get-aws-products {--keyword=calca-jeans} {--createText=0}';
 
     /**
      * The console command description.
@@ -42,33 +42,36 @@ class GetAWSProducts extends Command
     public function handle()
     {
         $keyword = $this->option('keyword');
+        $createText = boolval($this->option('createText'));
 
-        $data = [
-            "title" => "Automatic li-generated",
-            "prompt"=> $keyword,
-            "type" =>  "plp_post"
-        ];
+        if ($createText) {
+            $data = [
+                "title" => "Automatic li-generated",
+                "prompt"=> $keyword,
+                "type" =>  "plp_post"
+            ];
 
-        $guzzle = new Client(['base_uri' => env("TEXT_API_URL")]);
+            $guzzle = new Client(['base_uri' => env("TEXT_API_URL")]);
 
-        $rawResponse = $guzzle->post("/api/text", [
-            'headers' => [
-                'Authorization' => env("TEXT_API_TOKEN"),
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json'
-            ],
-          'body' => json_encode($data),
-        ]);
+            $rawResponse = $guzzle->post("/api/text", [
+                'headers' => [
+                    'Authorization' => env("TEXT_API_TOKEN"),
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json'
+                ],
+              'body' => json_encode($data),
+            ]);
 
-        $response = $rawResponse->getBody()->getContents();
+            $response = $rawResponse->getBody()->getContents();
 
-        $allText = json_decode(Arr::get(json_decode($response, true), 'text'), true);
+            $allText = json_decode(Arr::get(json_decode($response, true), 'text'), true);
 
-        $categoryText = new CategoryTexts();
-        $categoryText->category = Str::slug($keyword);
-        $categoryText->top_text = Arr::get($allText, 'pageSummary');
-        $categoryText->bottom_text = Arr::get($allText, 'linkTree');
-        $categoryText->save();
+            $categoryText = new CategoryTexts();
+            $categoryText->category = Str::slug($keyword);
+            $categoryText->top_text = Arr::get($allText, 'pageSummary');
+            $categoryText->bottom_text = Arr::get($allText, 'linkTree');
+            $categoryText->save();
+        }
 
         $config = new Configuration();
         $config->setAccessKey(env("AWS_ACCESS_KEY_ID"));
@@ -85,24 +88,22 @@ class GetAWSProducts extends Command
         $searchIndex = "All";
         $itemCount = 15;
         $offset = 3;
-        $properties = 'size';
-        $properties = json_encode(["size" => 42]);
+
         $resources = [
             SearchItemsResource::ITEM_INFOTITLE,
             SearchItemsResource::OFFERSLISTINGSPRICE,
             SearchItemsResource::IMAGESPRIMARYMEDIUM,
             SearchItemsResource::ITEM_INFOCONTENT_RATING,
             SearchItemsResource::IMAGESPRIMARYLARGE,
+            SearchItemsResource::IMAGESVARIANTSMEDIUM,
             SearchItemsResource::OFFERSLISTINGSSAVING_BASIS,
             SearchItemsResource::ITEM_INFOPRODUCT_INFO,
-            // SearchItemsResource::ITEM_INFOCLASSIFICATIONS,
             SearchItemsResource::CUSTOMER_REVIEWSSTAR_RATING,
             SearchItemsResource::CUSTOMER_REVIEWSCOUNT,
         ];
 
         $searchItemsRequest = new SearchItemsRequest();
 
-        // $searchItemsRequest->setProperties($properties);
         // $searchItemsRequest->setItemPage($offset);
         $searchItemsRequest->setSearchIndex($searchIndex);
 
@@ -145,6 +146,7 @@ class GetAWSProducts extends Command
             $price = null;
             $color = null;
             $size = null;
+            $images = new Collection();
 
             if ($product->getOffers() && $product->getOffers()->getListings()[0]->getPrice() !== null) {
                 $price = $product->getOffers()->getListings()[0]->getPrice()->getAmount();
@@ -158,21 +160,28 @@ class GetAWSProducts extends Command
                 $size = $product->getItemInfo()->getProductInfo()->getSize()->getDisplayValue();
             }
 
+            if ($product->getImages() && $product->getImages()->getVariants()) {
+                foreach ($product->getImages()->getVariants() as $key => $value) {
+                    $images->push($value->getMedium()->getUrl());
+                }
+            }
+
             $products->push(
                 [
                     "seller_site" => "aws",
                     "sku" => Str::of($product->getItemInfo()->getTitle()->getDisplayValue())->slug('-'),
                     "name" => $product->getItemInfo()->getTitle()->getDisplayValue(),
                     "price" => $price,
+                    "discount_price" => null,
                     "sold_by" => "Amazon",
-                    "offer_link" => "",
+                    "offer_link" => $product->getdetailPageURL(),
                     "highlight" =>  "",
                     "category" => $keyword,
                     "category_id" => null,
                     "product_nickname" => null,
                     "full_description" => $product->getItemInfo()->getTitle()->getDisplayValue(),
                     "feature_image" => $product->getImages()->getPrimary()->getMedium()->getUrl(),
-                    "images" => null,
+                    "images" => $images->toJson(),
                     "locale" => "sao_paulo",
                     "info" => [
                         "color" => $color,
