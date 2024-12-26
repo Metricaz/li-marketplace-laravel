@@ -16,6 +16,10 @@ class ProductPageController extends BaseController
         $similarProducts = (new Product())->where('category', $product->category)->limit(3)->get();
         $images = json_decode($product->images, true);
 
+        if (!$images) {
+            $images = [];
+        }
+
         return view('newlayout.product.index', [
             'product' => $product,
             'categoryText' => $categoryText,
