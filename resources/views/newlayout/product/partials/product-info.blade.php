@@ -1,16 +1,20 @@
 <div class="c-product__info">
   <div class="c-product__labels">
+    @if ($product->discount_price)
     <div class="c-product__label">
       Desconto Verificado
     </div>
+    @endif
   </div>
-
+  
+  @if ($product->discount_price)
   <div class="c-product__old-price">
-    {{$product->price}}
+    R$ {{$product->discount_price}}
   </div>
+  @endif
 
   <div class="c-product__price">
-    {{$product->price}}
+    R$ {{$product->price}}
   </div>
 
   <div class="c-product__sizes">

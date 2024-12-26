@@ -59,7 +59,7 @@
             @include('newlayout.partials.product-card', [
                 'title' => $product->name,
                 'price' => $product->price,
-                'old_price' => $product->price,
+                'old_price' => $product->discount_price,
                 'image_url' => $product->feature_image,
                 'url' => '/product/'.$product->id,
             ])

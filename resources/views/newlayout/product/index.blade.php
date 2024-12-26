@@ -1,6 +1,6 @@
 @extends('newlayout.master')
-@section('meta-title', 'Lorem ipsum dolor sit amet consectetur adipiscing elit - Bora Comprar')
-@section('meta-description', 'Lorem ipsum dolor sit amet consectetur adipiscing elit - Bora Comprar')
+@section('meta-title', "$product->name - Bora Comprar")
+@section('meta-description', "$product->name - Bora Comprar")
 
 @section('content')
 <div class="c-product-page">
