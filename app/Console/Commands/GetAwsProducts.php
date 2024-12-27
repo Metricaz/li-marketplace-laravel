@@ -2,22 +2,18 @@
 
 namespace App\Console\Commands;
 
-use Amazon\ProductAdvertisingAPI\v1\ApiException;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\api\DefaultApi;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\PartnerType;
-use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\ProductAdvertisingAPIClientException;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsRequest;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsResource;
 use Amazon\ProductAdvertisingAPI\v1\Configuration;
 use App\Models\CategoryTexts;
 use App\Models\Product;
 use App\Models\ProductInfo;
-use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 class GetAWSProducts extends Command
@@ -215,7 +211,7 @@ class GetAWSProducts extends Command
             $products->push(
                 [
                     "seller_site" => "aws",
-                    "sku" => Str::of($product->getItemInfo()->getTitle()->getDisplayValue())->slug('-'),
+                    "sku" => "",
                     "name" => $product->getItemInfo()->getTitle()->getDisplayValue(),
                     "price" => $price,
                     "discount_price" => null,

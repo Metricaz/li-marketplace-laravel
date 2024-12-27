@@ -51,7 +51,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/{category}', [CategoryController::class, 'index'])->name('category');
 
-Route::get('/product/{id}', [ProductPageController::class, 'show']);
+Route::get('/{sku}/p', [ProductPageController::class, 'show']);
 
 Route::apiResource('/shopee', MarketPlaceShopeeController::class);
 

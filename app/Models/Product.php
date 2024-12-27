@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use App\Events\ProductCreated;
 
 class Product extends Model
 {
@@ -31,6 +32,10 @@ class Product extends Model
         'offer_link',
         'images',
         'locale',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => ProductCreated::class,
     ];
 
     public function info(): HasOne

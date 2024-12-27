@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CategoryTexts;
 use App\Models\Product;
+use App\Models\ProductInfo;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\View\View;
 
@@ -11,7 +12,7 @@ class ProductPageController extends BaseController
 {
     public function show($id): View
     {
-        $product =  (new Product())->find($id);
+        $product =  (new Product())->where('sku', $id)->first();
         $categoryText = (new CategoryTexts())->where('category', $product->category)->first();
         $similarProducts = (new Product())->where('category', $product->category)->limit(3)->get();
         $images = json_decode($product->images, true);
