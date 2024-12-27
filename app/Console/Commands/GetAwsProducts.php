@@ -96,7 +96,7 @@ class GetAWSProducts extends Command
         $searchIndex = "All";
         $itemCount = 15;
 
-        for ($offset = 1; $offset <= 1; $offset++) {
+        for ($offset = 1; $offset <= 8; $offset++) {
             $resources = [
                 SearchItemsResource::ITEM_INFOTITLE,
                 SearchItemsResource::OFFERSLISTINGSPRICE,
