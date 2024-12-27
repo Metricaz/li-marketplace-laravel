@@ -1,19 +1,26 @@
 .c-form-control {
   background-color: var(--bc-color-bg);
-  border-radius: 62px;
-  border: solid 1px transparent;
+  border-radius: 6px;
+  border: solid 1px var(--bc-color-border);
   box-sizing: border-box;
+  color: inherit;
   display: inline-block;
-  font-size: 16px;
-  height: 45px;
+  font-size: 14px;
+  height: 37px;
   line-height: normal;
-  padding: 8px 10px;
+  padding: 9px 10px 8px 10px;
   transition: border-color .2s ease-in-out;
   vertical-align: middle;
   width: 100%;
 
+  &:active,
   &:focus {
     outline: none;
+    border-color: var(--bc-color-brand);
+  }
+
+  &::placeholder {
+    color: var(--bc-color-text-tertiary);
   }
 
   &[type="email"] {
@@ -35,11 +42,12 @@ select.c-form-control {
   -webkit-appearance: none;
   appearance: none;
   background-image: url('data:image/svg+xml,<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0607 7.24999L11.5303 7.78032L8.7071 10.6035C8.31657 10.9941 7.68341 10.9941 7.29288 10.6035L4.46966 7.78032L3.93933 7.24999L4.99999 6.18933L5.53032 6.71966L7.99999 9.18933L10.4697 6.71966L11 6.18933L12.0607 7.24999Z" fill="%23333333"/></svg>');
-  background-position: right 12px top 50%;
+  background-position: right 5px top calc(50% + 1px);
   background-repeat: no-repeat;
   background-size: 18px;
-  border-color: var(--bc-color-brand);
+  border-color: var(--bc-color-border);
   position: relative;
+  padding-right: 24px;
 
   option:checked {
     background-color: var(--bc-color-bg-soft);

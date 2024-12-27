@@ -26,7 +26,7 @@
             </label>
 
             <select
-              class="c-category-page-bar__select"
+              class="c-form-control c-category-page-bar__select"
               id="select-order-by"
               name=""
             >
@@ -44,7 +44,7 @@
 
             <form name="get-user-by-id" id="get-user-by-id" method="post" action="{{url('do-get-address')}}">
             <select
-              class="c-category-page-bar__select"
+              class="c-form-control c-category-page-bar__select"
               id="select-items-per-page"
               name="select-items-per-page"
             >

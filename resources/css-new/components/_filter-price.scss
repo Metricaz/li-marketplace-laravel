@@ -1,0 +1,60 @@
+.c-filter-price {
+  &__fields {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    max-width: 65px;
+    margin-bottom: 30px;
+
+    label {
+      display: block;
+      font-size: 14px;
+    }
+
+    input {
+      border-radius: 6px;
+      border: solid 1px var(--bc-color-border);
+      background-color: var(--bc-color-bg);
+      color: inherit;
+      height: 27px;
+      padding: 5px 8px;
+    }
+
+    &:last-child {
+      label,
+      input {
+        text-align: right;
+      }
+    }
+  }
+
+  &__slider.noUi-target {
+    height: 3px;
+    background-color: var(--bc-color-border);
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+
+    .noUi-connect {
+      background: var(--bc-color-brand);
+    }
+
+    .noUi-handle {
+      width: 18px !important;
+      height: 18px !important;
+      box-shadow: none;
+      border-radius: 100%;
+      top: -8px !important;
+      border: solid 3px var(--bc-color-brand);
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
