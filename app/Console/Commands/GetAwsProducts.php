@@ -166,7 +166,7 @@ class GetAWSProducts extends Command
         ];
 
         foreach ($responseProducts as $product) {
-            usleep(30000);
+            sleep(1);
             $price = null;
             $color = null;
             $size = null;
