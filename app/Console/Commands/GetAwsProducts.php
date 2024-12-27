@@ -97,6 +97,7 @@ class GetAWSProducts extends Command
         $itemCount = 15;
 
         for ($offset = 1; $offset <= 8; $offset++) {
+            sleep(1);
             $resources = [
                 SearchItemsResource::ITEM_INFOTITLE,
                 SearchItemsResource::OFFERSLISTINGSPRICE,
@@ -166,7 +167,6 @@ class GetAWSProducts extends Command
         ];
 
         foreach ($responseProducts as $product) {
-            sleep(1);
             $price = null;
             $color = null;
             $size = null;
