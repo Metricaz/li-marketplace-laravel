@@ -23,7 +23,7 @@ class GetAWSProducts extends Command
      *
      * @var string
      */
-    protected $signature = 'app:get-aws-products {--keyword=calca-jeans} {--createText=0}';
+    protected $signature = 'app:get-aws-products {--keyword=calca jeans} {--createText=0}';
 
     /**
      * The console command description.
@@ -96,7 +96,7 @@ class GetAWSProducts extends Command
         $searchIndex = "All";
         $itemCount = 15;
 
-        for ($offset = 1; $offset <= 8; $offset++) {
+        for ($offset = 1; $offset <= 1; $offset++) {
             $resources = [
                 SearchItemsResource::ITEM_INFOTITLE,
                 SearchItemsResource::OFFERSLISTINGSPRICE,
@@ -118,10 +118,12 @@ class GetAWSProducts extends Command
             $searchItemsRequest->setSearchIndex($searchIndex);
 
             $searchItemsRequest->setKeywords($keyword);
+            $searchItemsRequest->setMinSavingPercent(1);
             $searchItemsRequest->setItemCount($itemCount);
             $searchItemsRequest->setPartnerTag($partnerTag);
             $searchItemsRequest->setPartnerType(PartnerType::ASSOCIATES);
             $searchItemsRequest->setResources($resources);
+            $searchItemsRequest->setSortBy("Relevance");
 
             $invalidPropertyList = $searchItemsRequest->listInvalidProperties();
             $length = count($invalidPropertyList);
@@ -168,6 +170,7 @@ class GetAWSProducts extends Command
             $color = null;
             $size = null;
             $brand = null;
+            $discountPrice = null;
             $fullDescription = new Collection();
             $images = new Collection();
 
@@ -184,6 +187,10 @@ class GetAWSProducts extends Command
                     $fullDescription->push($value);
                 }
 
+            }
+
+            if ($product->getOffers() && $product->getOffers()->getListings()[0]->getSavingBasis() !== null) {
+                $discountPrice = $product->getOffers()->getListings()[0]->getSavingBasis()->getAmount();
             }
 
             if ($product->getOffers() && $product->getOffers()->getListings()[0]->getPrice() !== null) {
@@ -214,7 +221,7 @@ class GetAWSProducts extends Command
                     "sku" => "",
                     "name" => $product->getItemInfo()->getTitle()->getDisplayValue(),
                     "price" => $price,
-                    "discount_price" => null,
+                    "discount_price" => $discountPrice,
                     "sold_by" => "Amazon",
                     "offer_link" => $product->getdetailPageURL(),
                     "highlight" =>  "",
