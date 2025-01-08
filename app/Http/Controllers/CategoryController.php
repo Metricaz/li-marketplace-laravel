@@ -52,6 +52,10 @@ class CategoryController extends BaseController
 
         $products->where('price', '>', '0');
 
+        if ($request->has('order_by')) {
+            $products->orderBy('price', $request->get('order_by'));
+        }
+
         return $products->paginate($paginationLimit);
     }
 }

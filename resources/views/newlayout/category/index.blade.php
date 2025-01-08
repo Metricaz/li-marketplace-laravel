@@ -24,33 +24,34 @@
             <label for="select-order-by" class="u-visually-hidden">
               Ordenar por
             </label>
-
+          
+          <form name="order-by-form" id="order-by-form" method="get" action="{{url()->current()}}">
             <select
               class="c-form-control c-category-page-bar__select"
               id="select-order-by"
-              name=""
+              name="order_by"
             >
               <option value="">Mais Relevante</option>
-              <option value="">Preço mais alto</option>
-              <option value="">Preço mais baixo</option>
+              <option value="desc" @if(request()->has('order_by') && request()->get('order_by') == 'desc') selected @endif>Preço mais alto</option>
+              <option value="asc" @if(request()->has('order_by') && request()->get('order_by') == 'asc') selected @endif>Preço mais baixo</option>
             </select>
+          </form>
           </div>
-
 
           <div class="c-category-page-bar__right">
             <label for="select-items-per-page">
               Itens por página
             </label>
 
-            <form name="get-user-by-id" id="get-user-by-id" method="post" action="{{url('do-get-address')}}">
+            <form name="perpage-form" id="perpage-form" method="get" action="{{url()->current()}}">
             <select
               class="c-form-control c-category-page-bar__select"
               id="select-items-per-page"
-              name="select-items-per-page"
+              name="per_page"
             >
-              <option value="12">12</option>
-              <option value="24">24</option>
-              <option value="48">48</option>
+              <option value="12" @if(request()->has('per_page') && request()->get('per_page') == '12') selected @endif>12</option>
+              <option value="24" @if(request()->has('per_page') && request()->get('per_page') == '24') selected @endif>24</option>
+              <option value="48" @if(request()->has('per_page') && request()->get('per_page') == '48') selected @endif>48</option>
             </select>
             </form>
           </div>
