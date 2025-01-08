@@ -25,7 +25,27 @@
               Ordenar por
             </label>
           
-          <form name="order-by-form" id="order-by-form" method="get" action="{{url()->current()}}">
+          <form name="order-by-form" id="order-by-form" method="get" action="{{url()->full()}}">
+            <!--This code is really wrong-->
+            @if(request()->has('size'))
+              @foreach(request()->get('size') as $size)
+                <input type="hidden" name="size[]" value="{{$size}}" /> 
+              @endforeach
+            @endIf
+            @if(request()->has('brand'))
+              @foreach(request()->get('brand') as $brand)
+                <input type="hidden" name="brand[]" value="{{$brand}}" /> 
+              @endforeach
+            @endIf
+            @if(request()->has('color'))
+              @foreach(request()->get('color') as $color)
+                <input type="hidden" name="color[]" value="{{$color}}" /> 
+              @endforeach
+            @endIf
+            @if(request()->has('per_page'))
+              <input type="hidden" name="per_page" value="{{request()->get('per_page')}}" /> 
+            @endIf
+            <!--This code is really wrong-->
             <select
               class="c-form-control c-category-page-bar__select"
               id="select-order-by"
@@ -44,6 +64,26 @@
             </label>
 
             <form name="perpage-form" id="perpage-form" method="get" action="{{url()->current()}}">
+            <!--This code is really wrong-->
+            @if(request()->has('size'))
+              @foreach(request()->get('size') as $size)
+                <input type="hidden" name="size[]" value="{{$size}}" /> 
+              @endforeach
+            @endIf
+            @if(request()->has('brand'))
+              @foreach(request()->get('brand') as $brand)
+                <input type="hidden" name="brand[]" value="{{$brand}}" /> 
+              @endforeach
+            @endIf
+            @if(request()->has('color'))
+              @foreach(request()->get('color') as $color)
+                <input type="hidden" name="color[]" value="{{$color}}" /> 
+              @endforeach
+            @endIf
+            @if(request()->has('order_by'))
+              <input type="hidden" name="order_by" value="{{request()->get('order_by')}}" />
+            @endIf
+            <!--This code is really wrong-->
             <select
               class="c-form-control c-category-page-bar__select"
               id="select-items-per-page"

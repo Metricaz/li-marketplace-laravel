@@ -2,6 +2,7 @@ class OrderCategory {
   init() {
   	function sendData(data) {
   		const form = document.querySelector('#order-by-form');
+      console.log(form);
   		form.submit();
   	}
 
