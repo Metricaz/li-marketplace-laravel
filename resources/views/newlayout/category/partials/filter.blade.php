@@ -16,76 +16,123 @@
 
   <form name="filter-category-form" id="filter-category-form" method="get" action="{{route('category', $category)}}">
   @csrf
+    @if(request()->has('per_page'))
+      <input type="hidden" name="per_page" value="{{request()->get('per_page')}}" /> 
+    @endIf
+    @if(request()->has('order_by'))
+      <input type="hidden" name="order_by" value="{{request()->get('order_by')}}" />
+    @endIf
     <div class="c-filter__body">
       <div class="c-filter__block">
         <h4 class="c-filter__subtitle">
-          Tamanho
+          Marcas
         </h4>
 
-        <div class="c-filter__list">
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input" id="size" name="size[]" value="38" @if(request()->has('size') && in_array('38', request()->get('size'))) checked @endif>
-            <span class="c-checkbox__box"></span>
-            38
-          </label>
-
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input" id="size" name="size[]" value="39" @if(request()->has('size') && in_array('39', request()->get('size'))) checked @endif>
-            <span class="c-checkbox__box"></span>
-            39
-          </label>
-
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input" id="size" name="size[]" value="40" @if(request()->has('size') && in_array('40', request()->get('size'))) checked @endif>
-            <span class="c-checkbox__box"></span>
-            40
-          </label>
-
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input" id="size" name="size[]" value="41" @if(request()->has('size') && in_array('41', request()->get('size'))) checked @endif>
-            <span class="c-checkbox__box"></span>
-            41
-          </label>
-          @php
-          @endphp
-          <label class="c-checkbox">
-            <input type="checkbox" class="c-checkbox__input" id="size" name="size[]" value="42" @if(request()->has('size') && in_array('42', request()->get('size'))) checked @endif>
-            <span class="c-checkbox__box"></span>
-            42
-          </label>
-        </div>
-      </div>
-
-      <div class="c-filter__block">
-        <h4 class="c-filter__subtitle">
-          Marca
-        </h4>
-
-        <div class="c-filter__list">
-          <label class="c-checkbox">
+        <div
+          class="c-filter__list"
+          data-filter-list
+        >
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="brand" name="brand[]" value="levis" @if(request()->has('brand') && in_array('levis', request()->get('brand'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Levi's
           </label>
 
-          <label class="c-checkbox">
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="brand" name="brand[]" value="sawary" @if(request()->has('brand') && in_array('sawary', request()->get('brand'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Sawary
           </label>
 
-          <label class="c-checkbox">
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="brand" name="brand[]" value="biotipo" @if(request()->has('brand') && in_array('biotipo', request()->get('brand'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Biotipo
           </label>
 
-          <label class="c-checkbox">
+
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="brand" name="brand[]" value="hering" @if(request()->has('brand') && in_array('hering', request()->get('brand'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Hering
           </label>
+
+          <div class="c-filter__form-group">
+            <label for="filter-input-more-brands">
+              Outras marcas
+            </label>
+
+            <input
+              id="filter-input-more-brands"
+              class="c-form-control"
+              name="brand[]"
+              type="text"
+              placeholder="Digite a marca"
+              value="{{$userBrand}}"
+            >
+          </div>
         </div>
+      </div>
+
+      <div class="c-filter__block">
+        <h4 class="c-filter__subtitle">
+          Preço
+        </h4>
+
+        <div class="c-filter-price" data-filter-price>
+          <div class="c-filter-price__fields">
+            <div class="c-filter-price__field">
+              <label for="filter-price-input-min">
+                Min.
+              </label>
+
+              <input
+                id="filter-price-input-min"
+                name="minPrice"
+                type="text"
+                value="0"
+              >
+            </div>
+
+            <div class="c-filter-price__field">
+              <label for="filter-price-input-max">
+                Max.
+              </label>
+
+              <input
+                id="filter-price-input-max"
+                name="maxPrice"
+                type="text"
+                value="0"
+              >
+            </div>
+          </div>
+
+          <div class="c-filter-price__slider" id="price-slider"></div>
+        </div>
+      </div>
+
+      <div class="c-filter__block">
+        <label
+          class="c-filter__subtitle"
+          for="filter-input-sizes"
+        >
+          Tamanhos
+        </label>
+
+        <select
+          id="filter-input-sizes"
+          class="c-form-control"
+          name="size"
+        >
+          <option value="">Lista de tamanhos</option>
+          <option value="37" @if(request()->has('size') && request()->get('size') == '37') selected @endif>37</option>
+          <option value="38" @if(request()->has('size') && request()->get('size') == '38') selected @endif>38</option>
+          <option value="39" @if(request()->has('size') && request()->get('size') == '39') selected @endif>39</option>
+          <option value="40" @if(request()->has('size') && request()->get('size') == '40') selected @endif>40</option>
+          <option value="41" @if(request()->has('size') && request()->get('size') == '41') selected @endif>41</option>
+          <option value="42" @if(request()->has('size') && request()->get('size') == '42') selected @endif>42</option>
+        </select>
       </div>
 
       <div class="c-filter__block">
@@ -94,31 +141,31 @@
         </h4>
 
         <div class="c-filter__list">
-          <label class="c-checkbox">
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="color" name="color[]" value="azul" @if(request()->has('color') && in_array('azul', request()->get('color'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Azul
           </label>
 
-          <label class="c-checkbox">
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="color" name="color[]" value="preto" @if(request()->has('color') && in_array('preto', request()->get('color'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Preto
           </label>
 
-          <label class="c-checkbox">
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="color" name="color[]" value="cinza" @if(request()->has('color') && in_array('cinza', request()->get('color'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Cinza
           </label>
 
-          <label class="c-checkbox">
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="color" name="color[]" value="bege" @if(request()->has('color') && in_array('bege', request()->get('color'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Bege
           </label>
 
-          <label class="c-checkbox">
+          <label class="c-checkbox c-checkbox--right">
             <input type="checkbox" class="c-checkbox__input" id="color" name="color[]" value="branco" @if(request()->has('color') && in_array('branco', request()->get('color'))) checked @endif>
             <span class="c-checkbox__box"></span>
             Branco

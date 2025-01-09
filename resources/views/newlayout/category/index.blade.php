@@ -28,9 +28,7 @@
           <form name="order-by-form" id="order-by-form" method="get" action="{{url()->full()}}">
             <!--This code is really wrong-->
             @if(request()->has('size'))
-              @foreach(request()->get('size') as $size)
-                <input type="hidden" name="size[]" value="{{$size}}" /> 
-              @endforeach
+              <input type="hidden" name="size" value="{{request()->get('size')}}" />
             @endIf
             @if(request()->has('brand'))
               @foreach(request()->get('brand') as $brand)
@@ -66,9 +64,7 @@
             <form name="perpage-form" id="perpage-form" method="get" action="{{url()->current()}}">
             <!--This code is really wrong-->
             @if(request()->has('size'))
-              @foreach(request()->get('size') as $size)
-                <input type="hidden" name="size[]" value="{{$size}}" /> 
-              @endforeach
+              <input type="hidden" name="size" value="{{request()->get('size')}}" />
             @endIf
             @if(request()->has('brand'))
               @foreach(request()->get('brand') as $brand)
