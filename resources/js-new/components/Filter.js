@@ -100,13 +100,26 @@ class Filter {
     const inputMin = document.getElementById('filter-price-input-min');
     const inputMax = document.getElementById('filter-price-input-max');
     const inputs = [inputMin, inputMax];
+    const searchParams = new URLSearchParams(window.location.search);
+    let queryMinPrice = searchParams.get('minPrice')
+    let queryMaxPrice = searchParams.get('maxPrice')
+
+    if (!queryMinPrice) {
+      queryMinPrice = 0
+    }
+
+    if (!queryMaxPrice) {
+      queryMaxPrice = 10000
+    }
+
+    console.log(queryMinPrice)
 
     if (!slider || !inputMin || !inputMax) {
       return;
     }
 
     noUiSlider.create(slider, {
-      start: [0, 10000],
+      start: [queryMinPrice, queryMaxPrice],
       connect: true,
       range: {
         'min': [0, 5],
