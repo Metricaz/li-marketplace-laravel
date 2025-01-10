@@ -100,7 +100,7 @@
                 'price' => $product->price,
                 'old_price' => $product->discount_price,
                 'image_url' => $product->feature_image,
-                'url' => $product->sku.'/p',
+                'url' => url('/').'/'.$product->sku.'/p',
             ])
 
           @endforeach

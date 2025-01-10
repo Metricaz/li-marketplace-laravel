@@ -5,32 +5,31 @@ namespace App\Http\Controllers;
 use App\Helpers\RequestUserBrandHelper;
 use App\Models\CategoryTexts;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\View\View;
-use Illuminate\Http\Request;
 
-class CategoryController extends BaseController
+class SearchController extends BaseController
 {
-    public function index(Request $request, $category): View
+    public function index(Request $request, $search): View
     {
-        $products = $this->filter($request, $category);
-        $categoryText = (new CategoryTexts())->where('category', $category)->first();
+        $products = $this->filter($request, $search);
 
         return view('newlayout.category.index', [
             'products' => $products->appends(request()->query()),
-            'categoryText' => $categoryText,
-            'category' => $category,
+            'categoryText' => null,
+            'category' => $search,
             'productCount' => (new Product())->count(),
             'category_id' => null,
-            'filterAction' => 'category',
+            'filterAction' => 'search',
             'userBrand' => (new RequestUserBrandHelper())->getUserBrand($request),
         ]);
     }
 
-    private function filter($request, $category)
+    private function filter($request, $search)
     {
         $paginationLimit = $request->get('per_page', 12);
-        $products = (new Product())->where('category', $category);
+        $products = (new Product())->where('name', 'like', '%' . $search . '%');
 
         if ($request->has('size') || $request->has('brand') || $request->has('color')) {
             $products->join(

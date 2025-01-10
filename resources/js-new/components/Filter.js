@@ -112,8 +112,6 @@ class Filter {
       queryMaxPrice = 10000
     }
 
-    console.log(queryMinPrice)
-
     if (!slider || !inputMin || !inputMax) {
       return;
     }

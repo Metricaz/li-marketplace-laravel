@@ -14,7 +14,7 @@
     </button>
   </div>
 
-  <form name="filter-category-form" id="filter-category-form" method="get" action="{{route('category', $category)}}">
+  <form name="filter-category-form" id="filter-category-form" method="get" action="{{route($filterAction, $category)}}">
   @csrf
     @if(request()->has('per_page'))
       <input type="hidden" name="per_page" value="{{request()->get('per_page')}}" /> 

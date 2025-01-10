@@ -23,21 +23,27 @@
         @include('newlayout.partials.svg.icons.close')
       </button>
 
-      <div class="c-search__field">
-        <input
-          type="text"
-          placeholder="Buscar"
-          class="c-search__input"
-        >
+      <form name="serach-form" id="search-form" method="get" action="{{route('search', '')}}">
+        <div class="c-search__field">
+          <input
+            type="text"
+            name="topbar-search-input"
+            id="topbar-search-input"
+            placeholder="Buscar"
+            class="c-search__input"
+          >
 
-        <button
-          type="submit"
-          class="c-search__button"
-          title="Buscar"
-        >
-          @include('newlayout.partials.svg.icons.search')
-        </button>
-      </div>
+          <a
+            type="submit"
+            name="topbar-search-submit"
+            id="topbar-search-submit"
+            class="c-search__button"
+            title="Buscar"
+          >
+            @include('newlayout.partials.svg.icons.search')
+          </button>
+        </div>
+      </form>
     </div>
 
     <div class="c-header__follow-us">
