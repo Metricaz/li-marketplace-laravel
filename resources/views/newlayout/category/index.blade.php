@@ -1,6 +1,6 @@
 @extends('newlayout.master')
-@section('meta-title', 'Lorem ipsum dolor sit - Bora Comprar')
-@section('meta-description', 'Lorem ipsum dolor sit - Bora Comprar')
+@section('meta-title', Str::title(str_replace('-', ' ', $category)). " - Bora Comprar" )
+@section('meta-description', "Compre " .Str::title(str_replace('-', ' ', $category)). " - Bora Comprar")
 
 @section('content')
 <div class="c-category-page">

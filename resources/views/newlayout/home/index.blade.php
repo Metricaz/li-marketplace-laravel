@@ -8,7 +8,7 @@
   @include('newlayout.home.partials.cards-section', [
     'title' => 'SUPER DESCONTOS',
     'link' => '/calca-jeans',
-    'products' => $products
+    'products' => $products->shuffle()
   ])
   @include('newlayout.home.partials.cards-section', [
     'title' => 'MAIS VENDIDOS',

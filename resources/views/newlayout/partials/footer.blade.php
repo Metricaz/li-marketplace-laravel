@@ -227,7 +227,7 @@
         </div>
 
         <p>
-          Av. Joaquim Porto Villanova, 401 - B. Jardim Carvalho - Porto Alegre/RS CEP: 91410 - 400 CNPJ: 92.754.738/0001-62
+          RUA VERBO DIVINO ,2001 - CHÁCARA SANTO ANTÔNIO (ZONA SUL) CEP: 04719-002  CNPJ: 42.217.566/0001-10
         </p>
 
         <p>
