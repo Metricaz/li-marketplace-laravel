@@ -16,10 +16,11 @@ class HomeController extends BaseController
 
         return view('newlayout.home.index', [
             'products' => $products->appends(request()->query()),
+            'productsMinPrice' => Product::orderBy('price', 'asc')->limit(4)->get(),
         ]);
     }
 
-    private function filter($request)
+    private function filter($request, $order = null)
     {
         $paginationLimit = $request->get('per_page', 4);
         $products = new Product();
