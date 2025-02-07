@@ -5,7 +5,11 @@
         {!! $categoryText->bottom_text !!}
       @else
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat a nulla vitae pellentesque. Nunc ac cursus purus, quis posuere erat. Phasellus nulla quam, sagittis id nisi sed, tristique faucibus ante. Donec sed ultrices diam, vitae tristique nisl. Nulla imperdiet purus eu consectetur fermentum. Curabitur faucibus, massa eu aliquam sollicitudin, nulla mi lobortis eros, nec pretium ante mi non quam. Vestibulum eget ultrices mi. Aenean consectetur mollis erat, in finibus sem volutpat a. Cras sit amet ultrices ligula, id blandit tellus. Maecenas condimentum imperdiet mauris eu bibendum. Nunc maximus lorem id sem ullamcorper tincidunt. Aenean venenatis arcu ac aliquet tristique. Sed dapibus felis a risus fermentum hendrerit. Morbi a eros metus. Nulla consequat, massa ut ullamcorper facilisis, nulla nulla molestie purus, eu consequat velit neque ac diam.
+        Por Que a Calça Jeans é Essencial no Seu Guarda-Roupa?
+
+        A calça jeans é aquele item curinga que nunca sai de moda. Versátil, resistente e cheia de personalidade, ela se adapta a diferentes estilos, ocasiões e estações do ano. Seja para um dia casual, um ambiente de trabalho mais descontraído ou até mesmo um evento especial, sempre existe um modelo de jeans que combina com o que você precisa. Do clássico jeans reto ao moderno wide leg, passando pelo despojado mom jeans e o sofisticado flare, as possibilidades são infinitas.
+
+        Seja qual for o seu estilo, você vai encontrar a calça jeans perfeita para expressar sua personalidade e garantir conforto no dia a dia. Aproveite para explorar as ofertas e renovar seu guarda-roupa com praticidade e economia!
       @endif
       </p>
     </div>
