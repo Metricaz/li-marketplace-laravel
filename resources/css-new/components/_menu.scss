@@ -24,11 +24,16 @@
     }
 
     &__item a {
+      padding: 8px;
       display: flex;
       height: 38px;
       align-items: center;
       font-size: 13px;
       font-weight: var(--bc-font-weight-bold);
+    }
+
+    &__item a:hover {
+      background: #bc2b03;
     }
   }
 }
