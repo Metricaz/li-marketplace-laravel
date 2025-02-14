@@ -229,13 +229,6 @@
         <p>
           RUA VERBO DIVINO ,2001 - CHÁCARA SANTO ANTÔNIO (ZONA SUL) CEP: 04719-002  CNPJ: 42.217.566/0001-10
         </p>
-
-        <p>
-          <span>Para reclamações, clique aqui:</span>
-          <a href="#" target="_blank">Procon Rj</a>
-          <a href="#" target="_blank">Procon Sc</a>
-        </p>
-
         <p>
           Todos os direitos reservados
         </p>

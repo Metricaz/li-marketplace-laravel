@@ -16,7 +16,7 @@ class HomeController extends BaseController
 
         return view('newlayout.home.index', [
             'products' => $products->appends(request()->query()),
-            'productsMinPrice' => Product::orderBy('price', 'asc')->limit(4)->get(),
+            'productsMinPrice' => Product::orderBy('discount_price', 'desc')->limit(4)->get(),
         ]);
     }
 
