@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarketPlaceController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\MarketPlaceShopeeController;
 use App\Http\Controllers\ProductPageController;
 use App\Http\Controllers\SearchController;
@@ -47,6 +48,10 @@ Route::get('/politica-e-privacidade', function() {
 Route::get('/quem-somos', function() {
 	return view('newlayout.pages.about-us');
 });
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/product-sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/category-sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 Route::get('/', [HomeController::class, 'index']);
 
