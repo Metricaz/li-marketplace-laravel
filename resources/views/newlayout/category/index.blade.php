@@ -94,6 +94,9 @@
         </div>
 
         <div class="c-category-page__list">
+          @if(!$products->count())
+            Nenhum produto foi encontrado.
+          @endif
           @foreach($products as $product)
             @include('newlayout.partials.product-card', [
                 'title' => $product->name,
