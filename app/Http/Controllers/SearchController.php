@@ -11,9 +11,21 @@ use Illuminate\View\View;
 
 class SearchController extends BaseController
 {
-    public function index(Request $request, $search): View
+    public function index(Request $request, $search)
     {
         $products = $this->filter($request, $search);
+
+        if (!$products->count()) {
+            return response(view('newlayout.category.index', [
+                'products' => $products->appends(request()->query()),
+                'categoryText' => null,
+                'category' => $search,
+                'productCount' => (new Product())->count(),
+                'category_id' => null,
+                'filterAction' => 'search',
+                'userBrand' => (new RequestUserBrandHelper())->getUserBrand($request),
+            ]), 404);
+        }
 
         return view('newlayout.category.index', [
             'products' => $products->appends(request()->query()),
