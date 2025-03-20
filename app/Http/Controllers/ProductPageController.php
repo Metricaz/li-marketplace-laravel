@@ -14,7 +14,11 @@ class ProductPageController extends BaseController
     {
         $product =  (new Product())->where('sku', $id)->first();
         $categoryText = (new CategoryTexts())->where('category', $product->category)->first();
-        $similarProducts = (new Product())->where('category', $product->category)->limit(3)->get();
+
+        $similarProducts = Product::whereHas('categories', function($query) use ($product) {
+            return $query->where('slug', '=' , $product->categories()->first()->slug);
+        })->limit(3)->get();
+
         $images = json_decode($product->images, true);
 
         if (!$images) {

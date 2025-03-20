@@ -30,7 +30,9 @@ class CategoryController extends BaseController
     private function filter($request, $category)
     {
         $paginationLimit = $request->get('per_page', 12);
-        $products = (new Product())->where('category', $category);
+        $products = Product::whereHas('categories', function($query) use ($category) {
+            return $query->where('slug', '=' , $category);
+        });
 
         if ($request->has('size') || $request->has('brand') || $request->has('color')) {
             $products->join(
