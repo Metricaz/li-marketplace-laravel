@@ -24,7 +24,6 @@ class Product extends Model
         'discount_price',
         'sold_by',
         'highlight',
-        'category',
         'category_id',
         'product_nickname',
         'full_description',
@@ -46,5 +45,10 @@ class Product extends Model
     public function getPriceAttribute($price)
     {
         return number_format($price, 2, ',', '.');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
 }
