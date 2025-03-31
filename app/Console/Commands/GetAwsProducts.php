@@ -8,6 +8,7 @@ use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsRequest;
 use Amazon\ProductAdvertisingAPI\v1\com\amazon\paapi5\v1\SearchItemsResource;
 use Amazon\ProductAdvertisingAPI\v1\Configuration;
 use App\Models\CategoryTexts;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductInfo;
 use GuzzleHttp\Client;
@@ -141,7 +142,29 @@ class GetAWSProducts extends Command
 
             foreach ($products as $key => $product) {
                 $productModel = (new Product())->fill($product);
-                $productModel->save();
+
+                $productExists = Product::where('offer_link' , $productModel->offer_link)->first();
+                $category = Category::where('slug', $product['category'])->first();
+
+                if ($category == null) {
+                    $category = new Category;
+                    $category->name = ucwords(str_replace('-', ' ', $product['category']));
+                    $category->slug = $product['category'];
+                    $category->save();
+                }
+
+                $categories = new Collection();
+                $categories->push($category->id);
+
+
+                if ($productExists == null) {
+                    $productModel->save();
+                    $productModel->categories()->attach($categories);
+                }
+                
+                if ($productExists !== null) {
+                    $productExists->categories()->attach($categories);
+                }
 
                 $productInfo = (new ProductInfo())->fill($product["info"]);
                 $productInfo->product_id = $productModel->id;
