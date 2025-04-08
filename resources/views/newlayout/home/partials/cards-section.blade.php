@@ -20,7 +20,7 @@
 
           @endforeach
           <div class="c-cards-section__last-card">
-            <a href="{!! $link !!}" >
+            <a href="{!! $link !!}">
               @include('newlayout.partials.svg.icons.seta-1')
 
               <div>
@@ -40,7 +40,7 @@
     </div>
 
     <div class="c-cards-section__button">
-      <a href="{!! $link !!}" class="c-button c-button--secondary">
+      <a href="{!! $link !!}" class="c-button c-button--secondary" custom_title="{{ 'ver-mais'.$link }}">
         Ver Mais
       </a>
     </div>

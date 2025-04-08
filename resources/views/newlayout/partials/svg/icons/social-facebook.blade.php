@@ -1,3 +1,3 @@
-<svg width="26" height="25" viewBox="0 0 26 25" fill="currentColor" xmlns="https://www.w3.org/2000/svg">
+<svg width="26" height="25" viewBox="0 0 26 25" fill="currentColor" xmlns="https://www.w3.org/2000/svg" custom_title="facebook">
 <path d="M14.6113 9.0332V6.95801C14.6113 6.486 14.7049 6.13607 14.8921 5.9082C15.0793 5.68034 15.5309 5.56641 16.2471 5.56641H18.0293V2.0752H15.0508C13.2279 2.0752 11.9624 2.4821 11.2544 3.2959C10.5464 4.1097 10.1924 5.24902 10.1924 6.71387V9.0332H7.7998V12.5H10.1924V22.9248H14.6113V12.5H17.6143L18.0293 9.0332H14.6113Z" />
 </svg>

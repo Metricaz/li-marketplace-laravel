@@ -4,6 +4,7 @@
     class="c-follow-us__item"
     title="Instagram"
     target="_blank"
+    custom_title="instagram"
   >
     @include('newlayout.partials.svg.icons.social-instagram')
   </a>
@@ -13,6 +14,7 @@
     class="c-follow-us__item"
     title="Pinterest"
     target="_blank"
+    custom_title="pinterest"
   >
     @include('newlayout.partials.svg.icons.social-pinterest')
   </a>
@@ -22,6 +24,7 @@
     class="c-follow-us__item"
     title="Facebook"
     target="_blank"
+    custom_title="facebook"
   >
     @include('newlayout.partials.svg.icons.social-facebook')
   </a>
