@@ -31,6 +31,8 @@
     class="c-product__button"
     href="{{$product->offer_link}}"
     target="_blank"
+    id="see-more-amazon-wrapper"
+    custom_title="{{ 'ver-oferta-amazon-'.$product->name }}"
   >
     Ver Oferta @include('newlayout.partials.svg.icons.amazon')
   </a>

@@ -1,6 +1,7 @@
 <a
   href="{{ $url ?? '' }}"
   class="c-product-card-mini"
+  custom_title="{{ $title }}"
 >
   <img
     class="c-product-card-mini__img"
@@ -8,6 +9,7 @@
     alt="{{ $title ?? '' }}"
     width="242"
     height="222"
+    custom_title="{{ $title }}"
   >
 
   <div class="c-product-card-mini__body">
@@ -23,7 +25,7 @@
       <span class="c-product-card-mini__new-price">R$ {{ $price ?? '' }}</span>
     </div>
 
-    <div class="c-product-card-mini__button">
+    <div class="c-product-card-mini__button" custom_title="{{ 'ver-oferta-'.$title }}">
       Ver <strong>Oferta</strong> @include('newlayout.partials.svg.icons.external-link')
     </div>
   </div>

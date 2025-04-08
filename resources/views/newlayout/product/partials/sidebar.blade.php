@@ -1,5 +1,5 @@
-<div class="c-product-page__sidebar">
-  <h3 class="c-product-page__sidebar-title">
+<div class="c-product-page__sidebar" id="similar-offer-wrapper">
+  <h3 class="c-product-page__sidebar-title" >
     Ofertas similares
   </h3>
 
