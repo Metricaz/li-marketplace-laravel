@@ -13,6 +13,9 @@ class Datalayer {
     //pdp
     this.addListenerToSeeMoreAmazon();
     this.addListenerToSimilarOffer();
+    //plp
+    this.addListenerToPlpProducts();
+    this.addListenerToPlpFilter();
   }
 
   sendDataClick(wrapper, customType, customSection) {
@@ -36,6 +39,9 @@ class Datalayer {
   }
 
   slugify(text) {
+    if (!text) {
+      return;
+    }
     return text.normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
@@ -84,11 +90,21 @@ class Datalayer {
 
   addListenerToSeeMoreAmazon() {
     const wrapper = document.getElementById('see-more-amazon-wrapper');
-    this.sendDataClick(wrapper, 'botao', 'plp-boracomprar');
+    this.sendDataClick(wrapper, 'botao', 'pdp-boracomprar');
   }
 
   addListenerToSimilarOffer() {
     const wrapper = document.getElementById('similar-offer-wrapper');
+    this.sendDataClick(wrapper, 'botao', 'pdp-boracomprar');
+  }
+
+  addListenerToPlpProducts() {
+    const wrapper = document.getElementById('plp-products-wrapper');
+    this.sendDataClick(wrapper, 'botao', 'plp-boracomprar');
+  }
+
+  addListenerToPlpFilter() {
+    const wrapper = document.getElementById('filter-category-form');
     this.sendDataClick(wrapper, 'botao', 'plp-boracomprar');
   }
 
