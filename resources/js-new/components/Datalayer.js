@@ -16,6 +16,7 @@ class Datalayer {
     //plp
     this.addListenerToPlpProducts();
     this.addListenerToPlpFilter();
+    this.addListenerToTopProducts();
   }
 
   sendDataClick(wrapper, customType, customSection) {
@@ -105,6 +106,11 @@ class Datalayer {
 
   addListenerToPlpFilter() {
     const wrapper = document.getElementById('filter-category-form');
+    this.sendDataClick(wrapper, 'botao', 'plp-boracomprar');
+  }
+
+  addListenerToTopProducts() {
+    const wrapper = document.getElementById('top-products-wrapper');
     this.sendDataClick(wrapper, 'botao', 'plp-boracomprar');
   }
 
