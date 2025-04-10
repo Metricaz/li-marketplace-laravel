@@ -6,6 +6,7 @@ import Filter from './components/Filter';
 import ProductGallery from './components/ProductGallery';
 import Search from './components/Search';
 import TopOffers from './components/TopOffers';
+import Datalayer from './components/Datalayer';
 
 const brandsSection = new BrandsSection();
 brandsSection.init();
@@ -30,3 +31,6 @@ productGallery.init();
 
 const topOffers = new TopOffers();
 topOffers.init();
+
+const datalayer = new Datalayer();
+datalayer.init();

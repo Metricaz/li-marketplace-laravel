@@ -1,4 +1,4 @@
-<div class="c-top-offers">
+<div class="c-top-offers" id="top-products-wrapper">
   <div class="o-container">
     <h2 class="c-top-offers__title">
       Melhores ofertas

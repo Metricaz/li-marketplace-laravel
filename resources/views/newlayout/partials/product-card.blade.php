@@ -2,6 +2,7 @@
   <a
     href="{{ $url ?? '' }}"
     class=""
+    custom_title="{{ $title }}"
   >
   <img
     class="c-product-card__img"
@@ -9,6 +10,7 @@
     alt="{{ $title ?? '' }}"
     width="242"
     height="222"
+    custom_title="{{ $title }}"
   >
 
     <div class="c-product-card__body">
@@ -27,7 +29,7 @@
   </a>
 
   <a href="{{ $product->offer_link ?? '' }}">
-    <div class="c-product-card__button">
+    <div class="c-product-card__button" custom_title="{{ 'ver-oferta-'.$title }}">
       Ver <strong>Oferta</strong> @include('newlayout.partials.svg.icons.external-link')
     </div>
   </a>

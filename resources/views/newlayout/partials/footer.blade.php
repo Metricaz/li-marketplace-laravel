@@ -1,4 +1,4 @@
-<footer class="c-footer">
+<footer class="c-footer" id="footer-wrapper">
   <div class="c-footer__top">
     <div class="o-container">
       <div class="c-footer__content">
@@ -7,12 +7,14 @@
             class="c-footer__logo"
             href="/"
             title="Bora Comprar"
+            custom_title="logo"
           >
             <img
               src="{{ asset('img-new/logo-footer.webp') }}"
               alt="Logo Bora Comprar"
               width="240"
               height="91"
+              custom_title="logo"
             >
           </a>
         </div>
@@ -29,6 +31,7 @@
                   <a
                     class="c-footer__link"
                     href="/"
+                    custom_title="home"
                   >
                     Home
                   </a>
@@ -38,6 +41,7 @@
                   <a
                     class="c-footer__link"
                     href="/quem-somos"
+                    custom_title="quem-somos"
                   >
                     Quem Somos
                   </a>
@@ -47,6 +51,7 @@
                   <a
                     class="c-footer__link"
                     href="/politica-e-privacidade"
+                    custom_title="politica-e-privacidade"
                   >
                     Política de Privacidade
                   </a>
@@ -56,6 +61,7 @@
                   <a
                     class="c-footer__link"
                     href="/termos-de-uso"
+                    custom_title="termos-de-uso"
                   >
                     Termos de Uso
                   </a>
@@ -75,6 +81,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-feminina"
+                    custom_title="calca-jeans-feminina"
                   >
                     Calça Jeans Feminina
                   </a>
@@ -84,6 +91,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-preta"
+                    custom_title="calca-jeans-preta"
                   >
                     Calça Jeans Preta
                   </a>
@@ -93,6 +101,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-infantil"
+                    custom_title="calca-jeans-infantil"
                   >
                     Calça Jeans Infantil
                   </a>
@@ -102,6 +111,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-larga"
+                    custom_title="calca-jeans-larga"
                   >
                     Calça Jeans Larga
                   </a>
@@ -111,6 +121,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-branca"
+                    custom_title="calca-jeans-branca"
                   >
                     Calça Jeans Branca
                   </a>
@@ -120,6 +131,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-plus-size"
+                    custom_title="calca-jeans-plus-size"
                   >
                     Calça Jeans Plus Size
                   </a>
@@ -129,6 +141,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-rasgada"
+                    custom_title="calca-jeans-rasgada"
                   >
                     Calça Jeans Rasgada
                   </a>
@@ -138,6 +151,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-cinza"
+                    custom_title="calca-jeans-cinza"
                   >
                     Calça Jeans Cinza
                   </a>
@@ -147,6 +161,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-cintura-baixa"
+                    custom_title="calca-jeans-cintura-baixa"
                   >
                     Calça Jeans Cintura Baixa
                   </a>
@@ -158,6 +173,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-com-brilho"
+                    custom_title="calca-jeans-com-brilho"
                   >
                     Calça Jeans com Brilho
                   </a>
@@ -167,6 +183,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-escura"
+                    custom_title="calca-jeans-escura"
                   >
                     Calça Jeans Escura
                   </a>
@@ -176,6 +193,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-de-marca"
+                    custom_title="calca-jeans-de-marca"
                   >
                     Calça Jeans de Marca
                   </a>
@@ -185,6 +203,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-promocao"
+                    custom_title="calca-jeans-promocao"
                   >
                     Calça Jeans Promoção
                   </a>
@@ -194,6 +213,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-bege"
+                    custom_title="calca-jeans-bege"
                   >
                     Calça Jeans Bege
                   </a>
@@ -203,6 +223,7 @@
                   <a
                     class="c-footer__link"
                     href="/calca-jeans-rosa"
+                    custom_title="calca-jeans-rosa"
                   >
                     Calça Jeans Rosa
                   </a>

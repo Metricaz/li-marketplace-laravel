@@ -93,7 +93,7 @@
           </div>
         </div>
 
-        <div class="c-category-page__list">
+        <div class="c-category-page__list" id="plp-products-wrapper">
           @if(!$products->count())
             Nenhum produto foi encontrado.
           @endif
