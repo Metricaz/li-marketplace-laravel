@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\RequestUserBrandHelper;
+use App\Helpers\DataLayer;
 use App\Models\CategoryTexts;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -27,8 +28,11 @@ class SearchController extends BaseController
             ]), 404);
         }
 
+        $itemViewList = (new DataLayer())->getItemViewList($products->all(), $search);
+
         return view('newlayout.category.index', [
             'products' => $products->appends(request()->query()),
+            'itemViewList' => $itemViewList,
             'categoryText' => null,
             'category' => $search,
             'productCount' => (new Product())->count(),
