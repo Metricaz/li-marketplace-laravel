@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\DataLayer;
 use App\Helpers\RequestUserBrandHelper;
 use App\Models\CategoryTexts;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\View\View;
-use Illuminate\Http\Request;
 
 class CategoryController extends BaseController
 {
@@ -15,10 +16,12 @@ class CategoryController extends BaseController
     {
         $products = $this->filter($request, $category);
         $categoryText = (new CategoryTexts())->where('category', $category)->first();
+        $itemViewList = (new DataLayer())->getItemViewList($products->all(), $category);
 
         return view('newlayout.category.index', [
             'products' => $products->appends(request()->query()),
             'categoryText' => $categoryText,
+            'itemViewList' => $itemViewList,
             'category' => $category,
             'productCount' => (new Product())->count(),
             'category_id' => null,

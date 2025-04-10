@@ -7,6 +7,7 @@
   <div class="o-container">
     <div class="c-product-page__wrapper">
       <div class="c-product">
+        <input type="hidden" name="item-view-wrapper" id="item-view-wrapper" value="{{ $itemView }}" />
         <h1 class="c-product__title">
           {{$product->name}}
         </h1>

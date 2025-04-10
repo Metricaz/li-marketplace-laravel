@@ -17,6 +17,9 @@ class Datalayer {
     this.addListenerToPlpProducts();
     this.addListenerToPlpFilter();
     this.addListenerToTopProducts();
+    //Enhanced Ecommerce
+    this.addItemViewList();
+    this.addViewItem();
   }
 
   sendDataClick(wrapper, customType, customSection) {
@@ -25,9 +28,6 @@ class Datalayer {
     }
 
     wrapper.addEventListener('click', (event) => {
-      console.log(event.target);
-      console.log(this.slugify(event.target.getAttribute('custom_title')));
-
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event':'clique',
@@ -115,7 +115,7 @@ class Datalayer {
   }
 
   addListenerToSearchCallback() {
-    window.onload = function() {
+    window.addEventListener('load', function() {
       const url = window.location.href;
       if (url.includes('/s/')) {
         const data = document.getElementsByClassName('c-category-page__list');
@@ -135,7 +135,51 @@ class Datalayer {
           'custom_title': customTitle,
         });
       }
-    };
+    });
+  }
+
+  addItemViewList(){
+    window.addEventListener('load', function() {
+      const items = document.getElementById('item-view-list-wrapper');
+
+      if (!items) {
+        return;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'view_promotion',
+        'event_type': 'event_ecomm_recommended',
+        'ecommerce': {
+          'items': items.value
+        }
+      });
+    });
+  }
+
+  addViewItem(){
+    window.addEventListener('load', function() {
+      const items = document.getElementById('item-view-wrapper');
+      const price = document.getElementById('product-price');
+
+      if (!items) {
+        return;
+      }
+
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event_name': 'view_item',
+        'event_type': 'event_ecomm_recommended',
+        'ecommerce': {
+        'currency' : 'BRL',
+        'value': price.innerText,
+          'items': [
+            items.value
+          ]
+        }
+      });
+    });
   }
 }
 

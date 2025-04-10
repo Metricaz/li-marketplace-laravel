@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\DataLayer;
 use App\Models\CategoryTexts;
 use App\Models\Product;
-use App\Models\ProductInfo;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\View\View;
 
@@ -19,6 +19,7 @@ class ProductPageController extends BaseController
             return $query->where('slug', '=' , $product->categories()->first()->slug);
         })->limit(3)->get();
 
+        $itemView = (new DataLayer())->getViewItemPdp($similarProducts->all(), $product->categories()->first()->name);
         $images = json_decode($product->images, true);
 
         if (!$images) {
@@ -27,6 +28,7 @@ class ProductPageController extends BaseController
 
         return view('newlayout.product.index', [
             'product' => $product,
+            'itemView' => $itemView,
             'categoryText' => $categoryText,
             'similarProducts' => $similarProducts,
             'images' => $images,

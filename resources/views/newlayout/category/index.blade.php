@@ -7,7 +7,7 @@
   @include('newlayout.partials.breadcrumb')
   @include('newlayout.category.partials.category-description', ['categoryText' => $categoryText])
   @include('newlayout.category.partials.top-offers', ['top-products' => $products])
-
+  <input type="hidden" name="item-view-list-wrapper" id="item-view-list-wrapper" value="{{ $itemViewList }}" />
   <div class="o-container">
     <div class="c-category-page__wrapper">
       <div class="c-category-page__sidebar">

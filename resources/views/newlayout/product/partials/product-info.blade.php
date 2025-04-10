@@ -13,7 +13,7 @@
   </div>
   @endif
 
-  <div class="c-product__price">
+  <div class="c-product__price" id="product-price">
     R$ {{$product->price}}
   </div>
 
