@@ -21,6 +21,7 @@ class SearchController extends BaseController
                 'products' => $products->appends(request()->query()),
                 'categoryText' => null,
                 'category' => $search,
+                'itemViewList' => "",
                 'productCount' => (new Product())->count(),
                 'category_id' => null,
                 'filterAction' => 'search',
