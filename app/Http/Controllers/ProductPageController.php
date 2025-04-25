@@ -10,9 +10,21 @@ use Illuminate\View\View;
 
 class ProductPageController extends BaseController
 {
-    public function show($id): View
+    public function show($id)
     {
         $product =  (new Product())->where('sku', $id)->first();
+
+        if (!$product) {
+            return response(view('newlayout.product.not-found', [
+                'product' => $product,
+                'category' => '',
+                'itemView' => '',
+                'categoryText' => '',
+                'similarProducts' => '',
+                'images' => '',
+            ]), 404);
+        }
+
         $categoryText = (new CategoryTexts())->where('category', $product->categories()->first()->slug)->first();
 
         $similarProducts = Product::whereHas('categories', function($query) use ($product) {
