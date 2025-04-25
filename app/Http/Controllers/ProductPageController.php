@@ -13,7 +13,7 @@ class ProductPageController extends BaseController
     public function show($id): View
     {
         $product =  (new Product())->where('sku', $id)->first();
-        $categoryText = (new CategoryTexts())->where('category', $product->category)->first();
+        $categoryText = (new CategoryTexts())->where('category', $product->categories()->first()->slug)->first();
 
         $similarProducts = Product::whereHas('categories', function($query) use ($product) {
             return $query->where('slug', '=' , $product->categories()->first()->slug);
@@ -28,6 +28,7 @@ class ProductPageController extends BaseController
 
         return view('newlayout.product.index', [
             'product' => $product,
+            'category' => $product->categories()->first()->slug,
             'itemView' => $itemView,
             'categoryText' => $categoryText,
             'similarProducts' => $similarProducts,

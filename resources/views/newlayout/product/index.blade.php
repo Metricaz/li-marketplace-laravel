@@ -2,7 +2,9 @@
 @section('meta-title', "$product->name - Bora Comprar")
 @section('meta-description', "$product->name - Bora Comprar")
 
+
 @section('content')
+@include('newlayout.partials.breadcrumb')
 <div class="c-product-page">
   <div class="o-container">
     <div class="c-product-page__wrapper">
