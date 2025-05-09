@@ -13,6 +13,7 @@
         <a
           class="c-button"
           href="/calca-jeans-promocao"
+          id="hero-wrapper"
         >
           Ver Agora
         </a>

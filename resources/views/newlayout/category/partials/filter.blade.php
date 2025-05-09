@@ -370,8 +370,8 @@
       </div>
     </div> --}}
 
-    <div class="c-filter__footer">
-      <button type="submit" class="c-filter__button">
+    <div class="c-filter__footer" custom_title="filtrar">
+      <button type="submit" class="c-filter__button" custom_title="filtrar">
         Filtrar
       </button>
     </div>

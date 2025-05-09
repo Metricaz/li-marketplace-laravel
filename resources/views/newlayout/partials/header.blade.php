@@ -36,7 +36,7 @@
             custom_title="busca"
           >
 
-          <a
+          <button
             type="submit"
             name="topbar-search-submit"
             id="topbar-search-submit"

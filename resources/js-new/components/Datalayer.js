@@ -8,6 +8,7 @@ class Datalayer {
     this.addListenerToSuperDescontos();
     this.addListenerToMaisVendidos();
     this.addListenerToFeaturedCategories();
+    this.addListenerToHero();
     //search
     this.addListenerToSearchCallback();
     //pdp
@@ -76,22 +77,27 @@ class Datalayer {
 
   addListenerToSuperDescontos() {
     const wrapper = document.getElementById('super-descontos-wrapper');
-    this.sendDataClick(wrapper, 'link', 'geral');
+    this.sendDataClick(wrapper, 'card', 'geral');
   }
 
   addListenerToMaisVendidos() {
     const wrapper = document.getElementById('mais-vendidos-wrapper');
-    this.sendDataClick(wrapper, 'link', 'geral');
+    this.sendDataClick(wrapper, 'card', 'geral');
   }
 
   addListenerToFeaturedCategories() {
     const wrapper = document.getElementById('featured-categories-wrapper');
+    this.sendDataClick(wrapper, 'card', 'geral');
+  }
+
+  addListenerToHero() {
+    const wrapper = document.getElementById('hero-wrapper');
     this.sendDataClick(wrapper, 'link', 'geral');
   }
 
   addListenerToSeeMoreAmazon() {
     const wrapper = document.getElementById('see-more-amazon-wrapper');
-    this.sendDataClick(wrapper, 'botao', 'pdp-boracomprar');
+    this.sendDataClick(wrapper, 'link', 'pdp-boracomprar');
   }
 
   addListenerToSimilarOffer() {
@@ -106,7 +112,7 @@ class Datalayer {
 
   addListenerToPlpFilter() {
     const wrapper = document.getElementById('filter-category-form');
-    this.sendDataClick(wrapper, 'botao', 'plp-boracomprar');
+    this.sendDataClick(wrapper, 'checkbox', 'plp-boracomprar');
   }
 
   addListenerToTopProducts() {
