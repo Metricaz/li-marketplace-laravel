@@ -38,8 +38,6 @@ class UpdateCategoryProducts extends Command
      */
     public function handle()
     {
-        // dd(Category::all());
-        $products = Product::all()->groupBy("category");
         foreach ($products as $key => $value) {
             $category = New Category();
             $category->slug = $key;
